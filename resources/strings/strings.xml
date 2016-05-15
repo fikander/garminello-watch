@@ -1,0 +1,14 @@
+<strings>
+    <string id="AppName">Garminello</string>
+
+    <string id="prompt">Click the menu button</string>
+    <string id="select_board">Select board</string>
+   	<string id="view_list">Loading board..</string>
+   	<string id="loading">Loading..</string>
+   	<string id="load_failed">Failed to load\nError: </string>
+
+    <string id="menu_label_1">Item 1</string>
+    <string id="menu_label_2">Item 2</string>
+    <string id="menu_go_to_boards">Exit Board</string>
+
+</strings>

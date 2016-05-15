@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<debugInfo>
+<pcToLineNum>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ListView.mc" lineNum="10" pc="268435458" symbol="initialize"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ListView.mc" lineNum="11" pc="268435476" symbol="initialize"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ListView.mc" lineNum="12" pc="268435485" symbol="initialize"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ListView.mc" lineNum="13" pc="268435498" symbol="initialize"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ListView.mc" lineNum="14" pc="268435511" symbol="initialize"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ListView.mc" lineNum="15" pc="268435524" symbol="initialize"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ListView.mc" lineNum="22" pc="268435540" symbol="onUpdate"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ListView.mc" lineNum="23" pc="268435560" symbol="onUpdate"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ListView.mc" lineNum="25" pc="268435580" symbol="onUpdate"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ListView.mc" lineNum="26" pc="268435620" symbol="onUpdate"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ListView.mc" lineNum="27" pc="268435650" symbol="onUpdate"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ListView.mc" lineNum="30" pc="268435724" symbol="onUpdate"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ListView.mc" lineNum="31" pc="268435764" symbol="onUpdate"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ListView.mc" lineNum="32" pc="268435794" symbol="onUpdate"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ListView.mc" lineNum="33" pc="268435822" symbol="onUpdate"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ListView.mc" lineNum="39" pc="268435932" symbol="onUpdate"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ListView.mc" lineNum="40" pc="268435972" symbol="onUpdate"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ListView.mc" lineNum="48" pc="268436099" symbol="getItemIndexFromCoordinates"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ListView.mc" lineNum="49" pc="268436117" symbol="getItemIndexFromCoordinates"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ListView.mc" lineNum="50" pc="268436145" symbol="getItemIndexFromCoordinates"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ListView.mc" lineNum="51" pc="268436182" symbol="getItemIndexFromCoordinates"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ListView.mc" lineNum="53" pc="268436188" symbol="getItemIndexFromCoordinates"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ListView.mc" lineNum="70" pc="268436199" symbol="setItems"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ListView.mc" lineNum="71" pc="268436209" symbol="setItems"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ItemsViewDelegate.mc" lineNum="15" pc="268436228" symbol="initialize"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ItemsViewDelegate.mc" lineNum="16" pc="268436246" symbol="initialize"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ItemsViewDelegate.mc" lineNum="17" pc="268436269" symbol="initialize"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ItemsViewDelegate.mc" lineNum="18" pc="268436279" symbol="initialize"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ItemsViewDelegate.mc" lineNum="19" pc="268436289" symbol="initialize"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ItemsViewDelegate.mc" lineNum="20" pc="268436299" symbol="initialize"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ItemsViewDelegate.mc" lineNum="21" pc="268436323" symbol="initialize"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ItemsViewDelegate.mc" lineNum="23" pc="268436333" symbol="initialize"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ItemsViewDelegate.mc" lineNum="24" pc="268436346" symbol="initialize"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ItemsViewDelegate.mc" lineNum="27" pc="268436375" symbol="initialize"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ItemsViewDelegate.mc" lineNum="33" pc="268436420" symbol="onGetItems"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ItemsViewDelegate.mc" lineNum="34" pc="268436431" symbol="onGetItems"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ItemsViewDelegate.mc" lineNum="35" pc="268436441" symbol="onGetItems"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ItemsViewDelegate.mc" lineNum="37" pc="268436461" symbol="onGetItems"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ItemsViewDelegate.mc" lineNum="38" pc="268436492" symbol="onGetItems"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ItemsViewDelegate.mc" lineNum="40" pc="268436520" symbol="onGetItems"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ItemsViewDelegate.mc" lineNum="45" pc="268436586" symbol="onTap"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ItemsViewDelegate.mc" lineNum="46" pc="268436599" symbol="onTap"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ItemsViewDelegate.mc" lineNum="48" pc="268436603" symbol="onTap"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ItemsViewDelegate.mc" lineNum="49" pc="268436633" symbol="onTap"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ItemsViewDelegate.mc" lineNum="55" pc="268436660" symbol="onSwipe"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ItemsViewDelegate.mc" lineNum="57" pc="268436673" symbol="onSwipe"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ItemsViewDelegate.mc" lineNum="59" pc="268436704" symbol="onSwipe"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ItemsViewDelegate.mc" lineNum="63" pc="268436756" symbol="onSwipe"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ItemsViewDelegate.mc" lineNum="66" pc="268436777" symbol="onSwipe"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ItemsViewDelegate.mc" lineNum="70" pc="268436783" symbol="onKey"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ItemsViewDelegate.mc" lineNum="72" pc="268436796" symbol="onKey"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ItemsViewDelegate.mc" lineNum="74" pc="268436810" symbol="onKey"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ItemsViewDelegate.mc" lineNum="79" pc="268436828" symbol="onMenu"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ItemsViewDelegate.mc" lineNum="80" pc="268436914" symbol="onMenu"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ItemsViewDelegate.mc" lineNum="85" pc="268436920" symbol="menuExitBoard"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ItemsViewDelegate.mc" lineNum="86" pc="268436944" symbol="menuExitBoard"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ItemsViewDelegate.mc" lineNum="88" pc="268436968" symbol="menuExitBoard"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ItemsViewDelegate.mc" lineNum="89" pc="268436992" symbol="menuExitBoard"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ItemsViewDelegate.mc" lineNum="90" pc="268437026" symbol="menuExitBoard"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ItemsView.mc" lineNum="10" pc="268437061" symbol="initialize"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ItemsView.mc" lineNum="11" pc="268437079" symbol="initialize"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ItemsView.mc" lineNum="12" pc="268437092" symbol="initialize"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ItemsView.mc" lineNum="17" pc="268437104" symbol="onLayout"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ItemsView.mc" lineNum="24" pc="268437144" symbol="onShow"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ItemsView.mc" lineNum="28" pc="268437165" symbol="getCurrentList"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ItemsView.mc" lineNum="29" pc="268437165" symbol="getCurrentList"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ItemsView.mc" lineNum="31" pc="268437193" symbol="getCurrentList"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ItemsView.mc" lineNum="39" pc="268437210" symbol="onUpdate"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ItemsView.mc" lineNum="40" pc="268437223" symbol="onUpdate"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ItemsView.mc" lineNum="41" pc="268437230" symbol="onUpdate"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ItemsView.mc" lineNum="42" pc="268437248" symbol="onUpdate"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ItemsView.mc" lineNum="51" pc="268437271" symbol="onUpdate"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ItemsView.mc" lineNum="57" pc="268437294" symbol="onHide"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ItemsView.mc" lineNum="61" pc="268437315" symbol="nextList"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ItemsView.mc" lineNum="65" pc="268437344" symbol="prevList"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ItemsView.mc" lineNum="69" pc="268437373" symbol="onChangeList"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ItemsView.mc" lineNum="70" pc="268437426" symbol="onChangeList"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ItemsView.mc" lineNum="71" pc="268437436" symbol="onChangeList"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ItemsView.mc" lineNum="76" pc="268437483" symbol="onReceiveItems"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ItemsView.mc" lineNum="77" pc="268437507" symbol="onReceiveItems"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/ItemsView.mc" lineNum="78" pc="268437517" symbol="onReceiveItems"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/GarminelloView.mc" lineNum="6" pc="268437537" symbol="initialize"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/GarminelloView.mc" lineNum="11" pc="268437558" symbol="onLayout"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/GarminelloView.mc" lineNum="23" pc="268437601" symbol="onUpdate"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/GarminelloMenuDelegate.mc" lineNum="9" pc="268437627" symbol="initialize"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/GarminelloMenuDelegate.mc" lineNum="10" pc="268437645" symbol="initialize"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/GarminelloMenuDelegate.mc" lineNum="14" pc="268437658" symbol="onMenuItem"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/GarminelloMenuDelegate.mc" lineNum="15" pc="268437669" symbol="onMenuItem"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/GarminelloMenuDelegate.mc" lineNum="17" pc="268437704" symbol="onMenuItem"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/GarminelloMenuDelegate.mc" lineNum="19" pc="268437739" symbol="onMenuItem"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/GarminelloMenuDelegate.mc" lineNum="20" pc="268437760" symbol="onMenuItem"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/GarminelloMenuDelegate.mc" lineNum="21" pc="268437788" symbol="onMenuItem"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/GarminelloDelegate.mc" lineNum="9" pc="268437812" symbol="initialize"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/GarminelloDelegate.mc" lineNum="10" pc="268437830" symbol="initialize"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/GarminelloDelegate.mc" lineNum="14" pc="268437843" symbol="onMenu"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/GarminelloDelegate.mc" lineNum="15" pc="268437927" symbol="onMenu"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/GarminelloDelegate.mc" lineNum="19" pc="268437933" symbol="onTap"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/GarminelloDelegate.mc" lineNum="20" pc="268437957" symbol="onTap"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/GarminelloDelegate.mc" lineNum="21" pc="268437991" symbol="onTap"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/GarminelloApp.mc" lineNum="7" pc="268438026" symbol="initialize"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/GarminelloApp.mc" lineNum="20" pc="268438053" symbol="getInitialView"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/GarminelloApp.mc" lineNum="21" pc="268438082" symbol="getInitialView"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/GarminelloApp.mc" lineNum="22" pc="268438099" symbol="getInitialView"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/GarminelloApp.mc" lineNum="23" pc="268438117" symbol="getInitialView"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/GarminelloApp.mc" lineNum="24" pc="268438135" symbol="getInitialView"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/GarminelloApp.mc" lineNum="25" pc="268438152" symbol="getInitialView"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/GarminelloApp.mc" lineNum="26" pc="268438178" symbol="getInitialView"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/GarminelloApp.mc" lineNum="27" pc="268438210" symbol="getInitialView"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/GarminelloApp.mc" lineNum="29" pc="268438240" symbol="getInitialView"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/GarminelloApi.mc" lineNum="15" pc="268438312" symbol="initialize"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/GarminelloApi.mc" lineNum="16" pc="268438352" symbol="initialize"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/GarminelloApi.mc" lineNum="17" pc="268438365" symbol="initialize"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/GarminelloApi.mc" lineNum="18" pc="268438378" symbol="initialize"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/GarminelloApi.mc" lineNum="20" pc="268438422" symbol="initialize"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/GarminelloApi.mc" lineNum="25" pc="268438435" symbol="getBoards"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/GarminelloApi.mc" lineNum="39" pc="268438518" symbol="getBoard"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/BoardSelectionViewDelegate.mc" lineNum="12" pc="268438611" symbol="initialize"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/BoardSelectionViewDelegate.mc" lineNum="13" pc="268438629" symbol="initialize"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/BoardSelectionViewDelegate.mc" lineNum="14" pc="268438639" symbol="initialize"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/BoardSelectionViewDelegate.mc" lineNum="15" pc="268438649" symbol="initialize"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/BoardSelectionViewDelegate.mc" lineNum="16" pc="268438673" symbol="initialize"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/BoardSelectionViewDelegate.mc" lineNum="19" pc="268438682" symbol="initialize"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/BoardSelectionViewDelegate.mc" lineNum="24" pc="268438719" symbol="onGetBoards"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/BoardSelectionViewDelegate.mc" lineNum="25" pc="268438730" symbol="onGetBoards"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/BoardSelectionViewDelegate.mc" lineNum="26" pc="268438740" symbol="onGetBoards"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/BoardSelectionViewDelegate.mc" lineNum="28" pc="268438763" symbol="onGetBoards"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/BoardSelectionViewDelegate.mc" lineNum="33" pc="268438799" symbol="onTap"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/BoardSelectionViewDelegate.mc" lineNum="34" pc="268438812" symbol="onTap"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/BoardSelectionViewDelegate.mc" lineNum="36" pc="268438816" symbol="onTap"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/BoardSelectionViewDelegate.mc" lineNum="39" pc="268438846" symbol="onTap"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/BoardSelectionViewDelegate.mc" lineNum="41" pc="268438853" symbol="onTap"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/BoardSelectionViewDelegate.mc" lineNum="42" pc="268438888" symbol="onTap"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/BoardSelectionViewDelegate.mc" lineNum="43" pc="268438933" symbol="onTap"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/BoardSelectionView.mc" lineNum="7" pc="268438971" symbol="initialize"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/BoardSelectionView.mc" lineNum="12" pc="268438992" symbol="onLayout"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/BoardSelectionView.mc" lineNum="19" pc="268439032" symbol="onShow"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/BoardSelectionView.mc" lineNum="25" pc="268439053" symbol="onUpdate"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/BoardSelectionView.mc" lineNum="32" pc="268439076" symbol="onHide"/>
+<entry filename="/Users/tomaszkustrzynski/Documents/workspace/Garminello/source/BoardSelectionView.mc" lineNum="36" pc="268439097" symbol="onReceiveBoards"/>
+<entry filename="Rez" lineNum="21" pc="268439120" symbol="initialize"/>
+<entry filename="Rez" lineNum="22" pc="268439138" symbol="initialize"/>
+<entry filename="Rez" lineNum="23" pc="268439190" symbol="initialize"/>
+<entry filename="Rez" lineNum="33" pc="268439245" symbol="initialize"/>
+<entry filename="Rez" lineNum="34" pc="268439263" symbol="initialize"/>
+<entry filename="Rez" lineNum="51" pc="268439318" symbol="MainLayout"/>
+<entry filename="Rez" lineNum="52" pc="268439332" symbol="MainLayout"/>
+<entry filename="Rez" lineNum="53" pc="268439472" symbol="MainLayout"/>
+<entry filename="Rez" lineNum="54" pc="268439487" symbol="MainLayout"/>
+<entry filename="Rez" lineNum="55" pc="268439539" symbol="MainLayout"/>
+<entry filename="Rez" lineNum="56" pc="268439627" symbol="MainLayout"/>
+<entry filename="Rez" lineNum="57" pc="268439679" symbol="MainLayout"/>
+<entry filename="Rez" lineNum="67" pc="268439709" symbol="BoardSelectionLayout"/>
+<entry filename="Rez" lineNum="68" pc="268439723" symbol="BoardSelectionLayout"/>
+<entry filename="Rez" lineNum="69" pc="268439863" symbol="BoardSelectionLayout"/>
+<entry filename="Rez" lineNum="70" pc="268439878" symbol="BoardSelectionLayout"/>
+<entry filename="Rez" lineNum="71" pc="268439930" symbol="BoardSelectionLayout"/>
+<entry filename="Rez" lineNum="81" pc="268439950" symbol="ItemsLayout"/>
+<entry filename="Rez" lineNum="82" pc="268439964" symbol="ItemsLayout"/>
+<entry filename="Rez" lineNum="83" pc="268440117" symbol="ItemsLayout"/>
+<entry filename="Rez" lineNum="84" pc="268440132" symbol="ItemsLayout"/>
+<entry filename="Rez" lineNum="85" pc="268440184" symbol="ItemsLayout"/>
+</pcToLineNum>
+<symbolTable>
+<entry id="52" symbol="mOnReceiveBoards"/>
+<entry id="8389101" method="true" symbol="onSwipe"/>
+<entry id="18" object="true" symbol="BoardSelectionView"/>
+<entry id="8389124" method="true" symbol="onUpdate"/>
+<entry id="8389349" symbol="justification"/>
+<entry id="38" symbol="mApp"/>
+<entry id="8389097" method="true" symbol="onKey"/>
+<entry id="39" symbol="mApi"/>
+<entry id="25" object="true" symbol="ItemsViewMenu"/>
+<entry field="true" id="8388611" module="true" symbol="Toybox"/>
+<entry id="24" object="true" symbol="MainMenu"/>
+<entry id="10" object="true" symbol="ItemsView"/>
+<entry id="8388770" module="true" symbol="Strings"/>
+<entry id="27" method="true" symbol="BoardSelectionLayout"/>
+<entry id="9" object="true" symbol="ItemsViewDelegate"/>
+<entry id="8389280" method="true" symbol="getInitialView"/>
+<entry id="17" object="true" symbol="BoardSelectionViewDelegate"/>
+<entry id="66" method="true" symbol="getBoard"/>
+<entry id="26" method="true" symbol="MainLayout"/>
+<entry id="61" method="true" symbol="onChangeList"/>
+<entry id="8388769" module="true" symbol="Rez"/>
+<entry id="8389123" method="true" symbol="onShow"/>
+<entry id="47" symbol="startY"/>
+<entry id="46" symbol="startX"/>
+<entry field="true" id="29" symbol="view_list"/>
+<entry id="54" method="true" symbol="onGetBoards"/>
+<entry id="8389098" method="true" symbol="onTap"/>
+<entry id="60" method="true" symbol="prevList"/>
+<entry field="true" id="15" symbol="WATCH_ID"/>
+<entry id="8388702" method="true" symbol="initialize"/>
+<entry field="true" id="37" symbol="AppName"/>
+<entry id="8389080" method="true" symbol="onMenu"/>
+<entry id="8" object="true" symbol="ListView"/>
+<entry id="65" method="true" symbol="getBoards"/>
+<entry id="68" symbol="item_2"/>
+<entry id="67" symbol="item_1"/>
+<entry field="true" id="23" symbol="LauncherIcon"/>
+<entry id="58" method="true" symbol="getCurrentList"/>
+<entry id="43" symbol="mBoard"/>
+<entry id="45" method="true" symbol="menuExitBoard"/>
+<entry id="41" symbol="mOnReceiveItems"/>
+<entry field="true" id="31" symbol="menu_label_2"/>
+<entry field="true" id="30" symbol="menu_label_1"/>
+<entry id="59" method="true" symbol="nextList"/>
+<entry id="8389281" method="true" symbol="onStop"/>
+<entry field="true" id="35" symbol="loading"/>
+<entry field="true" id="8389065" symbol="locY"/>
+<entry id="14" object="true" symbol="GarminelloApp"/>
+<entry id="16" object="true" symbol="GarminelloApi"/>
+<entry id="8388771" module="true" symbol="Drawables"/>
+<entry id="53" symbol="mCurrentBoards"/>
+<entry id="8389122" method="true" symbol="onLayout"/>
+<entry id="8389279" method="true" symbol="onStart"/>
+<entry id="42" symbol="mCurrentItems"/>
+<entry id="12" object="true" symbol="GarminelloMenuDelegate"/>
+<entry field="true" id="22" symbol="id_monkey"/>
+<entry id="50" method="true" symbol="getItemIndexFromCoordinates"/>
+<entry id="8389348" symbol="font"/>
+<entry id="49" symbol="offsetY"/>
+<entry id="48" symbol="offsetX"/>
+<entry id="8389347" symbol="color"/>
+<entry id="64" symbol="watch_id"/>
+<entry field="true" id="33" symbol="menu_go_to_boards"/>
+<entry id="63" symbol="api_url"/>
+<entry id="8389109" method="true" symbol="onMenuItem"/>
+<entry id="8389091" symbol="mItems"/>
+<entry id="19" method="true" symbol="onReceiveBoards"/>
+<entry id="51" method="true" symbol="setItems"/>
+<entry id="21" module="true" symbol="Layouts"/>
+<entry field="true" id="36" symbol="prompt"/>
+<entry id="8389125" method="true" symbol="onHide"/>
+<entry id="13" object="true" symbol="GarminelloDelegate"/>
+<entry id="57" symbol="mLists"/>
+<entry field="true" id="32" symbol="load_failed"/>
+<entry id="8389345" symbol="rezId"/>
+<entry field="true" id="34" symbol="select_board"/>
+<entry id="55" symbol="mOrigin"/>
+<entry id="8389346" symbol="text"/>
+<entry id="44" method="true" symbol="onGetItems"/>
+<entry id="56" symbol="mListId"/>
+<entry field="true" id="8389063" symbol="identifier"/>
+<entry id="11" object="true" symbol="GarminelloView"/>
+<entry id="28" method="true" symbol="ItemsLayout"/>
+<entry id="20" module="true" symbol="Menus"/>
+<entry id="62" method="true" symbol="onReceiveItems"/>
+<entry id="69" symbol="go_to_boards"/>
+<entry id="8388772" module="true" symbol="Fonts"/>
+<entry id="40" symbol="mView"/>
+</symbolTable>
+<localVars>
+<entry endPc="268435724" name="i" stackId="2" startPc="268435650"/>
+<entry endPc="268435916" name="midline" stackId="4" startPc="268435794"/>
+<entry endPc="268435929" name="i" stackId="3" startPc="268435794"/>
+<entry endPc="268436190" name="i" stackId="2" startPc="268436099"/>
+<entry endPc="268436657" name="i" stackId="2" startPc="268436586"/>
+<entry endPc="268436780" name="swipe" stackId="2" startPc="268436660"/>
+<entry endPc="268436825" name="key" stackId="2" startPc="268436783"/>
+<entry endPc="268437058" name="view" stackId="1" startPc="268436920"/>
+<entry endPc="268437058" name="delegate" stackId="2" startPc="268436920"/>
+<entry endPc="268437268" name="list_title" stackId="3" startPc="268437230"/>
+<entry endPc="268437291" name="l" stackId="2" startPc="268437210"/>
+<entry endPc="268438023" name="view" stackId="2" startPc="268437933"/>
+<entry endPc="268438023" name="delegate" stackId="3" startPc="268437933"/>
+<entry endPc="268438237" name="view" stackId="5" startPc="268438152"/>
+<entry endPc="268438237" name="delegate" stackId="6" startPc="268438152"/>
+<entry endPc="268438309" name="lastBoard" stackId="3" startPc="268438053"/>
+<entry endPc="268438309" name="api" stackId="1" startPc="268438053"/>
+<entry endPc="268438309" name="lastItems" stackId="4" startPc="268438053"/>
+<entry endPc="268438309" name="app" stackId="2" startPc="268438053"/>
+<entry endPc="268438965" name="view" stackId="3" startPc="268438853"/>
+<entry endPc="268438965" name="delegate" stackId="4" startPc="268438853"/>
+<entry endPc="268438968" name="i" stackId="2" startPc="268438799"/>
+<entry endPc="268439706" name="rez_cmp_local_label_1W8MK9YJTI" stackId="3" startPc="268439318"/>
+<entry endPc="268439706" name="rez_cmp_local_label_1W8MK9YJTI_font" stackId="2" startPc="268439318"/>
+<entry endPc="268439706" name="rez_cmp_local_bitmap_id_monkey" stackId="5" startPc="268439318"/>
+<entry endPc="268439706" name="rez_cmp_local_label_1W8MK9YJTI_fontHeight" stackId="4" startPc="268439318"/>
+<entry endPc="268439947" name="rez_cmp_local_label_D2VJTSE0H4_font" stackId="2" startPc="268439709"/>
+<entry endPc="268439947" name="rez_cmp_local_label_D2VJTSE0H4_fontHeight" stackId="4" startPc="268439709"/>
+<entry endPc="268439947" name="rez_cmp_local_label_D2VJTSE0H4" stackId="3" startPc="268439709"/>
+<entry endPc="268440201" name="rez_cmp_local_label_list_title_fontHeight" stackId="4" startPc="268439950"/>
+<entry endPc="268440201" name="rez_cmp_local_label_list_title_font" stackId="2" startPc="268439950"/>
+<entry endPc="268440201" name="rez_cmp_local_label_list_title" stackId="3" startPc="268439950"/>
+</localVars>
+<annotations/>
+<functions>
+<functionEntry name="initialize" parent="ListView">
+<documentation/>
+</functionEntry>
+<functionEntry name="onUpdate" parent="ListView">
+<param id="dc"/>
+<documentation><![CDATA[<div class="description"> Update the view<br/></div>]]></documentation>
+</functionEntry>
+<functionEntry name="getItemIndexFromCoordinates" parent="ListView">
+<param id="coords"/>
+<documentation/>
+</functionEntry>
+<functionEntry name="onShow" parent="ListView">
+<documentation><![CDATA[<div class="description"> Called when this View is brought to the foreground. Restore<br/> the state of this View and prepare it to be shown. This includes<br/> loading resources into memory.<br/></div>]]></documentation>
+</functionEntry>
+<functionEntry name="onHide" parent="ListView">
+<documentation><![CDATA[<div class="description"> Called when this View is removed from the screen. Save the<br/> state of this View here. This includes freeing resources from<br/> memory.<br/></div>]]></documentation>
+</functionEntry>
+<functionEntry name="setItems" parent="ListView">
+<param id="items"/>
+<documentation/>
+</functionEntry>
+<functionEntry name="initialize" parent="ItemsViewDelegate">
+<param id="api"/>
+<param id="view"/>
+<param id="board"/>
+<param id="items"/>
+<documentation/>
+</functionEntry>
+<functionEntry name="onGetItems" parent="ItemsViewDelegate">
+<param id="status"/>
+<param id="items"/>
+<documentation/>
+</functionEntry>
+<functionEntry name="onTap" parent="ItemsViewDelegate">
+<param id="evt"/>
+<documentation/>
+</functionEntry>
+<functionEntry name="onSwipe" parent="ItemsViewDelegate">
+<param id="evt"/>
+<documentation/>
+</functionEntry>
+<functionEntry name="onKey" parent="ItemsViewDelegate">
+<param id="evt"/>
+<documentation/>
+</functionEntry>
+<functionEntry name="onMenu" parent="ItemsViewDelegate">
+<documentation/>
+</functionEntry>
+<functionEntry name="menuExitBoard" parent="ItemsViewDelegate">
+<documentation/>
+</functionEntry>
+<functionEntry name="initialize" parent="ItemsView">
+<documentation/>
+</functionEntry>
+<functionEntry name="onLayout" parent="ItemsView">
+<param id="dc"/>
+<documentation><![CDATA[<div class="description"> Load your resources here<br/></div>]]></documentation>
+</functionEntry>
+<functionEntry name="onShow" parent="ItemsView">
+<documentation><![CDATA[<div class="description"> Called when this View is brought to the foreground. Restore<br/> the state of this View and prepare it to be shown. This includes<br/> loading resources into memory.<br/></div>]]></documentation>
+</functionEntry>
+<functionEntry name="getCurrentList" parent="ItemsView">
+<documentation/>
+</functionEntry>
+<functionEntry name="onUpdate" parent="ItemsView">
+<param id="dc"/>
+<documentation><![CDATA[<div class="description"> Update the view<br/></div>]]></documentation>
+</functionEntry>
+<functionEntry name="onHide" parent="ItemsView">
+<documentation><![CDATA[<div class="description"> Called when this View is removed from the screen. Save the<br/> state of this View here. This includes freeing resources from<br/> memory.<br/></div>]]></documentation>
+</functionEntry>
+<functionEntry name="nextList" parent="ItemsView">
+<documentation/>
+</functionEntry>
+<functionEntry name="prevList" parent="ItemsView">
+<documentation/>
+</functionEntry>
+<functionEntry name="onChangeList" parent="ItemsView">
+<param id="index"/>
+<documentation/>
+</functionEntry>
+<functionEntry name="onReceiveItems" parent="ItemsView">
+<param id="items"/>
+<documentation/>
+</functionEntry>
+<functionEntry name="initialize" parent="GarminelloView">
+<documentation/>
+</functionEntry>
+<functionEntry name="onLayout" parent="GarminelloView">
+<param id="dc"/>
+<documentation><![CDATA[<div class="description"> Load your resources here<br/></div>]]></documentation>
+</functionEntry>
+<functionEntry name="onShow" parent="GarminelloView">
+<documentation><![CDATA[<div class="description"> Called when this View is brought to the foreground. Restore<br/> the state of this View and prepare it to be shown. This includes<br/> loading resources into memory.<br/></div>]]></documentation>
+</functionEntry>
+<functionEntry name="onUpdate" parent="GarminelloView">
+<param id="dc"/>
+<documentation><![CDATA[<div class="description"> Update the view<br/></div>]]></documentation>
+</functionEntry>
+<functionEntry name="onHide" parent="GarminelloView">
+<documentation><![CDATA[<div class="description"> Called when this View is removed from the screen. Save the<br/> state of this View here. This includes freeing resources from<br/> memory.<br/></div>]]></documentation>
+</functionEntry>
+<functionEntry name="initialize" parent="GarminelloMenuDelegate">
+<param id="origin"/>
+<documentation/>
+</functionEntry>
+<functionEntry name="onMenuItem" parent="GarminelloMenuDelegate">
+<param id="item"/>
+<documentation/>
+</functionEntry>
+<functionEntry name="initialize" parent="GarminelloDelegate">
+<param id="api"/>
+<documentation/>
+</functionEntry>
+<functionEntry name="onMenu" parent="GarminelloDelegate">
+<documentation/>
+</functionEntry>
+<functionEntry name="onTap" parent="GarminelloDelegate">
+<param id="evt"/>
+<documentation/>
+</functionEntry>
+<functionEntry name="initialize" parent="GarminelloApp">
+<documentation/>
+</functionEntry>
+<functionEntry name="onStart" parent="GarminelloApp">
+<documentation><![CDATA[<div class="description"> onStart() is called on application start up<br/></div>]]></documentation>
+</functionEntry>
+<functionEntry name="onStop" parent="GarminelloApp">
+<documentation><![CDATA[<div class="description"> onStop() is called when your application is exiting<br/></div>]]></documentation>
+</functionEntry>
+<functionEntry name="getInitialView" parent="GarminelloApp">
+<documentation><![CDATA[<div class="description"> Return the initial view of your application here<br/></div>]]></documentation>
+</functionEntry>
+<functionEntry name="initialize" parent="GarminelloApi">
+<param id="url"/>
+<documentation/>
+</functionEntry>
+<functionEntry name="getBoards" parent="GarminelloApi">
+<param id="callback"/>
+<documentation/>
+</functionEntry>
+<functionEntry name="getBoard" parent="GarminelloApi">
+<param id="board_id"/>
+<param id="callback"/>
+<documentation/>
+</functionEntry>
+<functionEntry name="initialize" parent="BoardSelectionViewDelegate">
+<param id="api"/>
+<param id="view"/>
+<documentation/>
+</functionEntry>
+<functionEntry name="onGetBoards" parent="BoardSelectionViewDelegate">
+<param id="status"/>
+<param id="boards"/>
+<documentation/>
+</functionEntry>
+<functionEntry name="onTap" parent="BoardSelectionViewDelegate">
+<param id="evt"/>
+<documentation/>
+</functionEntry>
+<functionEntry name="initialize" parent="BoardSelectionView">
+<documentation/>
+</functionEntry>
+<functionEntry name="onLayout" parent="BoardSelectionView">
+<param id="dc"/>
+<documentation><![CDATA[<div class="description"> Load your resources here<br/></div>]]></documentation>
+</functionEntry>
+<functionEntry name="onShow" parent="BoardSelectionView">
+<documentation><![CDATA[<div class="description"> Called when this View is brought to the foreground. Restore<br/> the state of this View and prepare it to be shown. This includes<br/> loading resources into memory.<br/></div>]]></documentation>
+</functionEntry>
+<functionEntry name="onUpdate" parent="BoardSelectionView">
+<param id="dc"/>
+<documentation><![CDATA[<div class="description"> Update the view<br/></div>]]></documentation>
+</functionEntry>
+<functionEntry name="onHide" parent="BoardSelectionView">
+<documentation><![CDATA[<div class="description"> Called when this View is removed from the screen. Save the<br/> state of this View here. This includes freeing resources from<br/> memory.<br/></div>]]></documentation>
+</functionEntry>
+<functionEntry name="onReceiveBoards" parent="BoardSelectionView">
+<param id="boards"/>
+<documentation/>
+</functionEntry>
+<functionEntry name="initialize" parent="MainMenu">
+<documentation/>
+</functionEntry>
+<functionEntry name="initialize" parent="ItemsViewMenu">
+<documentation/>
+</functionEntry>
+<functionEntry name="MainLayout" parent="Layouts">
+<param id="dc"/>
+<documentation><![CDATA[<div class="description"> Draw the layout<br/> param The context<br/></div>]]></documentation>
+</functionEntry>
+<functionEntry name="BoardSelectionLayout" parent="Layouts">
+<param id="dc"/>
+<documentation><![CDATA[<div class="description"> Draw the layout<br/> param The context<br/></div>]]></documentation>
+</functionEntry>
+<functionEntry name="ItemsLayout" parent="Layouts">
+<param id="dc"/>
+<documentation><![CDATA[<div class="description"> Draw the layout<br/> param The context<br/></div>]]></documentation>
+</functionEntry>
+</functions>
+</debugInfo>
