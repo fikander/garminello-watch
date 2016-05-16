@@ -21,7 +21,7 @@ class ItemsViewDelegate extends Ui.BehaviorDelegate {
         mCurrentItems = items;
 
         if (mCurrentItems != null) {
-        	mOnReceiveItems.invoke(mCurrentItems);
+        	mOnReceiveItems.invoke(null, mCurrentItems);
 		} else {
 	        // fetch boards for the user
 	        mApi.getBoard(board["id"], method(:onGetItems));
@@ -32,12 +32,13 @@ class ItemsViewDelegate extends Ui.BehaviorDelegate {
     	//Sys.println(Lang.format("Items for board $1$: $2$", [mBoard["name"], items]));
     	if (status == 200) {
     		mCurrentItems = items;
-    		mOnReceiveItems.invoke(items);
+    		mOnReceiveItems.invoke(null, items);
     		// save as property for the next run
 	        mApp.setProperty("board", mBoard);
 	        mApp.setProperty("items", items);
     	} else {
-    		Sys.println(Ui.loadResource(Rez.Strings.load_failed) + status.toString()); 
+    		Sys.println(Ui.loadResource(Rez.Strings.load_failed) + status.toString());
+    		mOnReceiveItems.invoke(status.toString(), null);
     	}
     }
 
@@ -45,34 +46,44 @@ class ItemsViewDelegate extends Ui.BehaviorDelegate {
     	if (mCurrentItems == null) {
     		return;
     	}
+    	var coords = evt.getCoordinates();
+    	if (coords[1] < 32) {
+    		if (coords[0] < 124) {
+    			mView.prevList();
+    		} else {
+    			mView.nextList();
+    		}
+    		return true;
+    	}
     	var i = mView.getItemIndexFromCoordinates(evt.getCoordinates());
-    	Sys.println("clicked list: " + i);
-    	// TODO
+    	// TODO - open menu?
+    	return true;
     }
     
     function onSwipe(evt)
     {
         var swipe = evt.getDirection();
         
-		if( swipe == SWIPE_LEFT or swipe == SWIPE_UP )
-        {
+		if(swipe == SWIPE_LEFT) {
         	mView.nextList();
-        }
-        else if( swipe == SWIPE_RIGHT or swipe == SWIPE_DOWN)
-        {
+        } else if(swipe == SWIPE_RIGHT) {
         	mView.prevList();
-        }
+        } else if (swipe == SWIPE_UP) {
+        	mView.nextPage();
+        } else if (swipe == SWIPE_DOWN) {
+        	mView.prevPage();
+        } 
 
         return true;
     }
 
 	function onKey(evt) {
 		var key = evt.getKey();
-
         if( key == KEY_ENTER )
         {
         	onMenu();
         }
+        return true;
 	}
     
     function onMenu() {

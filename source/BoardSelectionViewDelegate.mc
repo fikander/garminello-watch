@@ -23,9 +23,10 @@ class BoardSelectionViewDelegate extends Ui.BehaviorDelegate {
     	//Sys.println("Boards: " + boards);
     	if (status == 200) {
     		mCurrentBoards = boards;
-    		mOnReceiveBoards.invoke(boards);
+    		mOnReceiveBoards.invoke(null, boards);
     	} else {
-    		Sys.println("Failed to load\nError: " + status.toString()); 
+    		Sys.println("Failed to load\nError: " + status.toString());
+    		mOnReceiveBoards.invoke(status.toString(), null);
     	}
     }
     
@@ -43,5 +44,15 @@ class BoardSelectionViewDelegate extends Ui.BehaviorDelegate {
 	    	Ui.switchToView(view, delegate, Ui.SLIDE_IMMEDIATE);    	
     	}
     }
+
+	function onNextPage() {
+        mView.nextPage();
+		return true;
+	}
+
+	function onPreviousPage() {
+        mView.prevPage();
+		return true;
+	}
 
 }

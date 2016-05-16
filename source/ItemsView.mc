@@ -64,6 +64,14 @@ class ItemsView extends ListView {
 	function prevList() {
 		onChangeList(mListId - 1);
 	}
+
+	function nextPage() {
+		ListView.nextPage();
+	}
+
+	function prevPage() {
+		ListView.prevPage();
+	}
 	
     function onChangeList(index) {
     	if (index >= 0 and mLists != null and index < mLists.size()) {
@@ -72,9 +80,12 @@ class ItemsView extends ListView {
     	}
     }
 
-	function onReceiveItems(items) {
-		Sys.println("RECEIVED: " + items);
-		mLists = items;
-		onChangeList(0);
+	function onReceiveItems(err, items) {
+		if (err) {
+			ListView.setError(err);
+		} else {
+			mLists = items;
+			onChangeList(0);
+		}
 	}
 }

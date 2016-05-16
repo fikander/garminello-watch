@@ -17,7 +17,7 @@ class GarminelloMenuDelegate extends Ui.MenuInputDelegate {
             Sys.println("item 2");
         } else if (item == :go_to_boards) {
         	Sys.println("go to boards");
-        	Ui.popView(Ui.SLIDE_DOWN);
+        	Ui.popView(Ui.SLIDE_DOWN); // close this menu
         	mOrigin.menuExitBoard();
         }
     }

@@ -32,7 +32,20 @@ class BoardSelectionView extends ListView {
     	ListView.onHide();
     }
 
-	function onReceiveBoards(boards) {
-		ListView.setItems(boards);
+	function onReceiveBoards(err, boards) {
+		if (err) {
+			ListView.setError(err);
+		} else {
+			ListView.setItems(boards);
+		}
 	}
+
+	function nextPage() {
+		ListView.nextPage();
+	}
+
+	function prevPage() {
+		ListView.prevPage();
+	}
+
 }
