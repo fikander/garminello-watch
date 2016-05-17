@@ -3,56 +3,72 @@ using Toybox.System as Sys;
 
 class BoardSelectionViewDelegate extends Ui.BehaviorDelegate {
 
-	hidden var mApi;
-	hidden var mView;
-	hidden var mOnReceiveBoards;
-	hidden var mCurrentBoards;
+    hidden var mView;
+    hidden var mOnReceiveBoards;
+    hidden var mCurrentBoards;
 
-    function initialize(api, view) {
+    function initialize(view) {
         BehaviorDelegate.initialize();
-        mApi = api;
         mView = view;
         mOnReceiveBoards = view.method(:onReceiveBoards);
         mCurrentBoards = null;
 
         // fetch boards for the user
-        mApi.getBoards(method(:onGetBoards));
+        gApi.getBoards(method(:onGetBoards));
     }
-    
+
     function onGetBoards(status, boards) {
-    	//Sys.println("Boards: " + boards);
-    	if (status == 200) {
-    		mCurrentBoards = boards;
-    		mOnReceiveBoards.invoke(null, boards);
-    	} else {
-    		Sys.println("Failed to load\nError: " + status.toString());
-    		mOnReceiveBoards.invoke(status.toString(), null);
-    	}
+        //Sys.println("Boards: " + boards);
+        if (status == 200) {
+            mCurrentBoards = boards;
+            mOnReceiveBoards.invoke(null, boards);
+        } else {
+            Sys.println("Failed to load\nError: " + status.toString());
+            mOnReceiveBoards.invoke(status.toString(), null);
+        }
     }
-    
+
     function onTap(evt) {
-    	if (mCurrentBoards == null) {
-    		return;
-    	}
-    	var i = mView.getItemIndexFromCoordinates(evt.getCoordinates());
-    	//Sys.println("clicked board: " + i);
+        if (mCurrentBoards == null) {
+            return;
+        }
+        var i = mView.getItemIndexFromCoordinates(evt.getCoordinates());
+        //Sys.println("clicked board: " + i);
 
-		if (i != null) {
-			// open list view screen
-	    	var view = new ItemsView(mCurrentBoards[i]);
-	    	var delegate = new ItemsViewDelegate(mApi, view, mCurrentBoards[i]);
-	    	Ui.switchToView(view, delegate, Ui.SLIDE_IMMEDIATE);    	
-    	}
+        if (i != null) {
+            // open list view screen
+            var model = new ItemsModel(mCurrentBoards[i], null);
+            var view = new ItemsView(model);
+            var delegate = new ItemsViewDelegate(view, model);
+            Ui.switchToView(view, delegate, Ui.SLIDE_IMMEDIATE);
+        }
     }
 
-	function onNextPage() {
-        mView.nextPage();
-		return true;
-	}
+    function onSwipe(evt)
+    {
+        var swipe = evt.getDirection();
 
-	function onPreviousPage() {
+        if(swipe == SWIPE_LEFT) {
+            mView.nextList();
+        } else if(swipe == SWIPE_RIGHT) {
+            mView.prevList();
+        } else if (swipe == SWIPE_UP) {
+            onNextPage();
+        } else if (swipe == SWIPE_DOWN) {
+            onPreviousPage();
+        }
+
+        return true;
+    }
+
+    function onNextPage() {
+        mView.nextPage();
+        return true;
+    }
+
+    function onPreviousPage() {
         mView.prevPage();
-		return true;
-	}
+        return true;
+    }
 
 }

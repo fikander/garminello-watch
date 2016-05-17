@@ -100,7 +100,7 @@ class ListView extends Ui.View {
     	}
     	var i = (coords[1] - startY) / offsetY + (currentPage * pageSize);
     	Sys.println("clicked item: " + i);
-    	if (i >= 0 and i < mItems.size()) {
+    	if (i >= 0 and mItems != null and i < mItems.size()) {
     		return i;
     	} else {
     		return null;
