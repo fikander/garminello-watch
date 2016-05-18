@@ -2,8 +2,14 @@
 
 	<layout id="RegisterLayout">
 	    <label x="center" y="5" font="Gfx.FONT_SMALL" text="@Strings.register" color="Gfx.COLOR_WHITE" justification="Gfx.TEXT_JUSTIFY_CENTER" />
-	    <label id="error_msg" x="center" y="120" font="Gfx.FONT_SMALL" text="@Strings.empty" color="Gfx.COLOR_RED" justification="Gfx.TEXT_JUSTIFY_CENTER" />
-	    <label id="watch_id" x="center" y="150" font="Gfx.FONT_LARGE" text="@Strings.empty" color="Gfx.COLOR_YELLOW" justification="Gfx.TEXT_JUSTIFY_CENTER" />
+	    <label id="watch_id" x="center" y="90" font="Gfx.FONT_LARGE" text="@Strings.empty" color="Gfx.COLOR_YELLOW" justification="Gfx.TEXT_JUSTIFY_CENTER" />
+	    <label x="center" y="130" font="Gfx.FONT_SMALL" text="@Strings.register_tap" color="Gfx.COLOR_WHITE" justification="Gfx.TEXT_JUSTIFY_CENTER" />
+	    <label id="error_msg" x="center" y="160" font="Gfx.FONT_SMALL" text="@Strings.empty" color="Gfx.COLOR_RED" justification="Gfx.TEXT_JUSTIFY_CENTER" />
+	</layout>
+
+	<layout id="AboutLayout">
+	    <label x="center" y="5" font="Gfx.FONT_SMALL" text="." color="Gfx.COLOR_WHITE" justification="Gfx.TEXT_JUSTIFY_CENTER" />
+	    <label id="watch_id" x="center" y="90" font="Gfx.FONT_LARGE" text="@Strings.empty" color="Gfx.COLOR_YELLOW" justification="Gfx.TEXT_JUSTIFY_CENTER" />
 	</layout>
 
 	<layout id="MainLayout">

@@ -4,16 +4,18 @@
     <string id="AppName">Garminello</string>
     
     <string id="register">Register watch at\ngarminello.com/reg\nwith code</string>
+    <string id="register_tap">Then tap the screen</string>
 	<string id="register_watch_error">Register watch</string>
 	<string id="register_watch_try_again">Try again</string>
+	<string id="generic_api_error">Loading data failed</string>
 
     <string id="prompt">Click the menu button</string>
     <string id="select_board">Select board</string>
    	<string id="view_list">Loading board..</string>
    	<string id="loading">Loading..</string>
-   	<string id="load_failed">Failed to load\nError: </string>
+   	<string id="load_failed">Error:\n</string>
 
-    <string id="menu_label_1">Item 1</string>
-    <string id="menu_label_2">Item 2</string>
+    <string id="unregister_watch">Unregister watch</string>
+    <string id="about">About</string>
     <string id="menu_go_to_boards">Exit Board</string>
 </strings>

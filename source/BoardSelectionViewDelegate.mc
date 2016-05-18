@@ -17,14 +17,14 @@ class BoardSelectionViewDelegate extends Ui.BehaviorDelegate {
         gApi.getBoards(method(:onGetBoards));
     }
 
-    function onGetBoards(status, boards) {
+    function onGetBoards(status, data) {
         //Sys.println("Boards: " + boards);
         if (status == 200) {
-            mCurrentBoards = boards;
-            mOnReceiveBoards.invoke(null, boards);
+            mCurrentBoards = data;
+            mOnReceiveBoards.invoke(null, data);
         } else {
             Sys.println("Failed to load\nError: " + status.toString());
-            mOnReceiveBoards.invoke(status.toString(), null);
+            mOnReceiveBoards.invoke(data.toString(), null);
         }
     }
 
@@ -71,4 +71,23 @@ class BoardSelectionViewDelegate extends Ui.BehaviorDelegate {
         return true;
     }
 
+    function onKey(evt) {
+        var key = evt.getKey();
+        if( key == KEY_ENTER )
+        {
+            onMenu();
+            return true;
+        }
+        return false;
+    }
+
+    function onMenu() {
+        Ui.pushView(new Rez.Menus.MainMenu(), new GarminelloMenuDelegate(self), Ui.SLIDE_UP);
+        return true;
+    }
+
+    function menuAbout() {
+        Ui.pushView(new AboutView(), new AboutViewDelegate(self), Ui.SLIDE_UP);
+        return true;
+    }
 }

@@ -14,6 +14,8 @@ class RegisterView extends Ui.View {
     hidden var mWatchId = "";
     hidden var mErrorsCount = 0;
 
+    hidden var mHideLoading = false;
+
     function initialize() {
         View.initialize();
         Sys.println("VIEW INIT");
@@ -35,10 +37,14 @@ class RegisterView extends Ui.View {
     //! Update the view
     function onUpdate(dc) {
         Sys.println("ON UPDATE");
-        findDrawableById("error_msg").setText(mErrorMsg);
-        findDrawableById("watch_id").setText(mWatchId);
-        // Call the parent onUpdate function to redraw the layout
-        View.onUpdate(dc);
+        if (mHideLoading) {
+            findDrawableById("error_msg").setText(mErrorMsg);
+            findDrawableById("watch_id").setText(mWatchId);
+            // Call the parent onUpdate function to redraw the layout
+            View.onUpdate(dc);
+         } else {
+            dc.drawBitmap(dc.getWidth()/2, dc.getHeight()/2, Ui.loadResource(Rez.Drawables.loading));
+         }
     }
 
     //! Called when this View is removed from the screen. Save the
@@ -54,6 +60,7 @@ class RegisterView extends Ui.View {
         }
         mErrorsCount++;
         mWatchId = watchId;
+        mHideLoading = true;
         Ui.requestUpdate();
     }
 }

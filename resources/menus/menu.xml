@@ -1,7 +1,7 @@
 <menus>
 	<menu id="MainMenu">
-	    <menu-item id="item_1">@Strings.menu_label_1</menu-item>
-	    <menu-item id="item_2">@Strings.menu_label_2</menu-item>
+	    <menu-item id="about">@Strings.about</menu-item>
+	    <menu-item id="unregister_watch">@Strings.unregister_watch</menu-item>
 	</menu>
 	<menu id="ItemsViewMenu">
 	    <menu-item id="go_to_boards">@Strings.menu_go_to_boards</menu-item>

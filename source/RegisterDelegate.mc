@@ -50,7 +50,8 @@ class RegisterDelegate extends Ui.BehaviorDelegate {
 
     function generateWatchId() {
         var id = "";
-        var s = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","0","1","2","3","4","5","6","7","8","9"];
+        // no "O" as it could be confised with 0
+        var s = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","P","Q","R","S","T","U","V","W","X","Y","Z","0","1","2","3","4","5","6","7","8","9"];
         for (var i=0; i<8; i++) {
             id += s[Math.rand() % s.size()];
         }
