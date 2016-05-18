@@ -43,7 +43,9 @@ class RegisterView extends Ui.View {
             // Call the parent onUpdate function to redraw the layout
             View.onUpdate(dc);
          } else {
-            dc.drawBitmap(dc.getWidth()/2, dc.getHeight()/2, Ui.loadResource(Rez.Drawables.loading));
+            dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_BLACK);
+            dc.clear();
+            dc.drawBitmap(dc.getWidth()/2 - 16, dc.getHeight()/2 - 16, Ui.loadResource(Rez.Drawables.loading));
          }
     }
 
