@@ -4,14 +4,12 @@ using Toybox.System as Sys;
 
 class ItemsViewDelegate extends Ui.BehaviorDelegate {
 
-    hidden var mApp;
     hidden var mView;
     hidden var mModel;
 
     function initialize(view, model) {
         BehaviorDelegate.initialize();
 
-        mApp = App.getApp();
         mView = view;
         mModel = model;
 
@@ -33,7 +31,9 @@ class ItemsViewDelegate extends Ui.BehaviorDelegate {
             return true;
         }
         var i = mView.getItemIndexFromCoordinates(evt.getCoordinates());
-        mModel.cardTapped(mView.getCurrentList(), i);
+        if (i != null) {
+            mModel.cardTapped(mView.getCurrentList(), i);
+        }
         return true;
     }
 
@@ -80,9 +80,6 @@ class ItemsViewDelegate extends Ui.BehaviorDelegate {
     }
 
     function menuExitBoard() {
-        // delete cached list
-        mApp.setProperty("board", null);
-        mApp.setProperty("items", null);
         // open board selection view
         var view = new BoardSelectionView();
         var delegate = new BoardSelectionViewDelegate(view);

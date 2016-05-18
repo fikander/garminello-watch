@@ -1,5 +1,6 @@
 using Toybox.WatchUi as Ui;
 using Toybox.System as Sys;
+using Toybox.Application as App;
 
 class BoardSelectionViewDelegate extends Ui.BehaviorDelegate {
 
@@ -12,6 +13,12 @@ class BoardSelectionViewDelegate extends Ui.BehaviorDelegate {
         mView = view;
         mOnReceiveBoards = view.method(:onReceiveBoards);
         mCurrentBoards = null;
+
+        // delete cached list
+        Sys.println("clearing cache");
+        var app = App.getApp();
+        app.setProperty("board", null);
+        app.setProperty("items", null);
 
         // fetch boards for the user
         gApi.getBoards(method(:onGetBoards));

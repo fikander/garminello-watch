@@ -39,7 +39,9 @@ class RegisterView extends Ui.View {
         Sys.println("ON UPDATE");
         if (mHideLoading) {
             findDrawableById("error_msg").setText(mErrorMsg);
-            findDrawableById("watch_id").setText(mWatchId);
+            if (mWatchId != null) {
+                findDrawableById("watch_id").setText(mWatchId);
+            }
             // Call the parent onUpdate function to redraw the layout
             View.onUpdate(dc);
          } else {

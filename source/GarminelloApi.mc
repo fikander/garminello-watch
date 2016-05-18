@@ -78,6 +78,7 @@ class GarminelloApi {
         var watch_id = app.getProperty("watch_id");
         if (watch_id != null) {
             var call = new ApiCall(callback);
+            options["v"] = VERSION;
             Comm.makeJsonRequest(
                 api_url + url,
                 options,

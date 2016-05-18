@@ -33,7 +33,6 @@ class ItemsView extends ListView {
 
     function onHide() {
         ListView.onHide();
-        mModel.onHide();
     }
 
     function nextList() {

@@ -3,6 +3,11 @@ using Toybox.System as Sys;
 using Toybox.Application as App;
 
 class AboutViewDelegate extends Ui.BehaviorDelegate {
+
+    function initialize() {
+        BehaviorDelegate.initialize();
+    }
+
     function onKey(evt) {
         closeAbout();
     }
@@ -20,7 +25,7 @@ class AboutView extends Ui.View {
     hidden var watch_id;
 
     function initialize() {
-        Ui.View.initialize();
+        View.initialize();
     }
 
     //! Load your resources here

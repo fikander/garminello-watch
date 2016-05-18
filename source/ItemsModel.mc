@@ -48,7 +48,7 @@ class ItemsModel {
     }
 
     // called when view visualising this model is being hidden
-    function onHide() {
+    function onModified() {
         // save as property for the next run
         mApp.setProperty("board", mBoard);
         mApp.setProperty("items", mItems);
@@ -89,6 +89,7 @@ class ItemsModel {
         }
         c["color"] += 1;
         Ui.requestUpdate();
+        onModified();
     }
 
 }

@@ -2,6 +2,7 @@ using Toybox.Application as App;
 using Toybox.WatchUi as Ui;
 using Toybox.System as Sys;
 
+var VERSION = "1.0";
 
 var gApi = null;
 
@@ -25,6 +26,7 @@ class GarminelloApp extends App.AppBase {
         var app = App.getApp();
         var lastBoard = app.getProperty("board");
         var lastItems = app.getProperty("items");
+        //Sys.println(lastBoard);
         if (lastBoard != null and lastItems != null) {
             // last board data available - show the last list
             var model = new ItemsModel(lastBoard, lastItems);

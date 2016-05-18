@@ -16,6 +16,7 @@
    	<string id="load_failed">Error:\n</string>
 
     <string id="unregister_watch">Unregister watch</string>
+    <string id="are_you_sure">Are you sure?</string>
     <string id="about">About</string>
     <string id="menu_go_to_boards">Exit Board</string>
 </strings>
