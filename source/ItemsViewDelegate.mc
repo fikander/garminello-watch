@@ -25,7 +25,7 @@ class ItemsViewDelegate extends Ui.BehaviorDelegate {
     function onTap(evt) {
         var coords = evt.getCoordinates();
         if (coords[1] < 32) {
-            if (coords[0] < 124) {
+            if (coords[0] < 71) {
                 mView.prevList();
             } else {
                 mView.nextList();
@@ -33,7 +33,7 @@ class ItemsViewDelegate extends Ui.BehaviorDelegate {
             return true;
         }
         var i = mView.getItemIndexFromCoordinates(evt.getCoordinates());
-        // TODO - open menu?
+        mModel.cardTapped(mView.getCurrentList(), i);
         return true;
     }
 

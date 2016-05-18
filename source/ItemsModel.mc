@@ -38,18 +38,20 @@ class ItemsModel {
     }
 
     function onGetItems(status, data) {
-        //Sys.println(Lang.format("Items for board $1$: $2$", [mBoard["name"], items]));
         if (status == 200) {
             mItems = data;
-            // save as property for the next run
-            mApp.setProperty("board", mBoard);
-            mApp.setProperty("items", mItems);
         } else {
             mLastError = data;
-            Sys.println("ERRROR: Failed loading of items for board " + mBoard + " : " + status.toString() + " : " + data);
         }
         mUpdateCallback.invoke();
-        mUpdateCallback = null;
+        mUpdateCallback = null; // release reference, otherwise circular
+    }
+
+    // called when view visualising this model is being hidden
+    function onHide() {
+        // save as property for the next run
+        mApp.setProperty("board", mBoard);
+        mApp.setProperty("items", mItems);
     }
 
     function getError() {
@@ -78,6 +80,15 @@ class ItemsModel {
         } else {
             return null;
         }
+    }
+
+    function cardTapped(list, card) {
+        var c = getCards(list)[card];
+        if (c["color"] == null) {
+            c["color"] = 0;
+        }
+        c["color"] += 1;
+        Ui.requestUpdate();
     }
 
 }

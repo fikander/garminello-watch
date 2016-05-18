@@ -18,12 +18,10 @@ class BoardSelectionViewDelegate extends Ui.BehaviorDelegate {
     }
 
     function onGetBoards(status, data) {
-        //Sys.println("Boards: " + boards);
         if (status == 200) {
             mCurrentBoards = data;
             mOnReceiveBoards.invoke(null, data);
         } else {
-            Sys.println("Failed to load\nError: " + status.toString());
             mOnReceiveBoards.invoke(data.toString(), null);
         }
     }

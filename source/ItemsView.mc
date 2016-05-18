@@ -31,6 +31,11 @@ class ItemsView extends ListView {
         ListView.onUpdate(dc);
     }
 
+    function onHide() {
+        ListView.onHide();
+        mModel.onHide();
+    }
+
     function nextList() {
         onChangeList(mListId + 1);
     }
@@ -52,5 +57,9 @@ class ItemsView extends ListView {
         } else {
             onChangeList(0);
         }
+    }
+
+    function getCurrentList() {
+        return mListId;
     }
 }

@@ -18,6 +18,9 @@ class ApiCall {
         } else if (status < 0) {
             data = Ui.loadResource(Rez.Strings.generic_api_error);
         }
+        if (status < 0) {
+            Sys.println("ERROR: Api: " + status.toString() + ": " + data);
+        }
         actualCallback.invoke(status, data);
     }
 }
