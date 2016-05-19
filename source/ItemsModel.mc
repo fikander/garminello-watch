@@ -40,6 +40,7 @@ class ItemsModel {
     function onGetItems(status, data) {
         if (status == 200) {
             mItems = data;
+            onModified();
         } else {
             mLastError = data;
         }
