@@ -29,7 +29,7 @@ class BoardSelectionViewDelegate extends Ui.BehaviorDelegate {
             mCurrentBoards = data;
             mOnReceiveBoards.invoke(null, data);
         } else {
-            mOnReceiveBoards.invoke(data.toString(), null);
+            mOnReceiveBoards.invoke(data, null);
         }
     }
 

@@ -1,4 +1,10 @@
 <layouts>
+<!-- 
+	<layout id="MainLayout">
+	    <label x="center" y="5" text="@Strings.prompt" color="Gfx.COLOR_WHITE" justification="Gfx.TEXT_JUSTIFY_CENTER" />
+	    <bitmap id="id_monkey" x="center" y="30" filename="../drawables/monkey.png" />
+	</layout>
+ -->
 
 	<layout id="RegisterLayout">
 	    <label x="center" y="5" font="Gfx.FONT_SMALL" text="@Strings.register" color="Gfx.COLOR_WHITE" justification="Gfx.TEXT_JUSTIFY_CENTER" />
@@ -8,17 +14,12 @@
 	</layout>
 
 	<layout id="AboutLayout">
-	    <label x="center" y="10" font="Gfx.FONT_LARGE" text="Garminello" color="Gfx.COLOR_WHITE" justification="Gfx.TEXT_JUSTIFY_CENTER" />
+	    <label x="center" y="10" font="Gfx.FONT_LARGE" text="Garminello" color="Gfx.COLOR_YELLOW" justification="Gfx.TEXT_JUSTIFY_CENTER" />
 	    <label x="center" y="50" font="Gfx.FONT_SMALL" text="Trello for Garmin\nwatches" color="Gfx.COLOR_WHITE" justification="Gfx.TEXT_JUSTIFY_CENTER" />
 	    <label x="center" y="100" font="Gfx.FONT_SMALL" text="garminello.com" color="Gfx.COLOR_WHITE" justification="Gfx.TEXT_JUSTIFY_CENTER" />
-	    <label id="watch_id" x="center" y="160" font="Gfx.FONT_SMALL" text="@Strings.empty" color="Gfx.COLOR_YELLOW" justification="Gfx.TEXT_JUSTIFY_CENTER" />
+	    <label id="watch_id" x="center" y="160" font="Gfx.FONT_SMALL" text="@Strings.empty" color="Gfx.COLOR_LT_GRAY" justification="Gfx.TEXT_JUSTIFY_CENTER" />
 	</layout>
 
-	<layout id="MainLayout">
-	    <label x="center" y="5" text="@Strings.prompt" color="Gfx.COLOR_WHITE" justification="Gfx.TEXT_JUSTIFY_CENTER" />
-	    <bitmap id="id_monkey" x="center" y="30" filename="../drawables/monkey.png" />
-	</layout>
-	
 	<layout id="BoardSelectionLayout">
 	    <label x="center" y="5" font="Gfx.FONT_SMALL" text="@Strings.select_board" color="Gfx.COLOR_WHITE" justification="Gfx.TEXT_JUSTIFY_CENTER" />
 	</layout>
@@ -26,6 +27,11 @@
 	<layout id="ItemsLayout">
 	    <label id="list_title" x="center" y="5" font="Gfx.FONT_SMALL" text="@Strings.view_list" color="Gfx.COLOR_YELLOW" justification="Gfx.TEXT_JUSTIFY_CENTER" />
 	    <label id="list_number" x="0" y="5" font="Gfx.FONT_SMALL" text="@Strings.empty" color="Gfx.COLOR_YELLOW" justification="Gfx.TEXT_JUSTIFY_LEFT" />
+	</layout>
+	
+	<layout id="ConnectionErrorLayout">
+	    <label x="center" y="10" font="Gfx.FONT_LARGE" text="Garminello" color="Gfx.COLOR_YELLOW" justification="Gfx.TEXT_JUSTIFY_CENTER" />
+	    <label id="error_msg" x="center" y="100" font="Gfx.FONT_SMALL" text="@Strings.empty" color="Gfx.COLOR_RED" justification="Gfx.TEXT_JUSTIFY_CENTER" />
 	</layout>
 
 </layouts>

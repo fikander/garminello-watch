@@ -7,7 +7,8 @@
     <string id="register_tap">Then tap the screen</string>
 	<string id="register_watch_error">Register watch</string>
 	<string id="register_watch_try_again">Try again</string>
-	<string id="generic_api_error">Loading data failed</string>
+	<string id="generic_api_error">Loading failed</string>
+	<string id="connection_error">Connection error.\nCheck mobile phone\nconnection</string>
 
     <string id="prompt">Click the menu button</string>
     <string id="select_board">Select board</string>

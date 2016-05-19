@@ -12,14 +12,17 @@ class ApiCall {
     }
 
     function onReceive(status, data) {
-        Sys.println("received: " + status + ": " + data);
-        if (status == -400) {
-            data = Ui.loadResource(Rez.Strings.register_watch_error);
-        } else if (status < 0) {
-            data = Ui.loadResource(Rez.Strings.generic_api_error);
+        Sys.println("ApiCall:onReceive: " + status + ": " + data);
+        // alternative status (straight from the garminello server) may be embedded in the return JSON dictionary
+        if (data instanceof Dictionary and data["status"] != null) {
+            status = data["status"];
         }
-        if (status < 0) {
-            Sys.println("ERROR: Api: " + status.toString() + ": " + data);
+        if (status == 456) {
+            data = Ui.loadResource(Rez.Strings.register_watch_error);
+        } else if (status == 0 or status == -300) {
+            data = Ui.loadResource(Rez.Strings.connection_error);
+        } else if (status < 0) {
+            data = Ui.loadResource(Rez.Strings.generic_api_error) + " (" + status.toString() + ")";
         }
         actualCallback.invoke(status, data);
     }
@@ -88,7 +91,7 @@ class GarminelloApi {
                 call.method(:onReceive)
             );
         } else {
-            callback.invoke(400, Ui.loadResource(Rez.Strings.register_watch_error));
+            callback.invoke(456, Ui.loadResource(Rez.Strings.register_watch_error));
         }
         return true;
     }

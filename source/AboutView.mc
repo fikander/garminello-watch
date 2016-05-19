@@ -41,7 +41,9 @@ class AboutView extends Ui.View {
 
     //! Update the view
     function onUpdate(dc) {
-        findDrawableById("watch_id").setText(watch_id);
+        if (watch_id != null) {
+            findDrawableById("watch_id").setText(watch_id);
+        }
         View.onUpdate(dc);
     }
 

@@ -10,7 +10,6 @@ class RegisterDelegate extends Ui.BehaviorDelegate {
     function initialize(view) {
         BehaviorDelegate.initialize();
         mView = view;
-        Sys.println("DELEGATE INITIALIZE");
         tryConfig();
     }
 
@@ -19,23 +18,25 @@ class RegisterDelegate extends Ui.BehaviorDelegate {
     }
 
     function onConfigReceived(status, data) {
+        Sys.println("RegisterDelegate:onConfigReceived " + status.toString() + " " + data);
         if (status == 200) {
             // registered - proceed
             var view = new BoardSelectionView();
             var delegate = new BoardSelectionViewDelegate(view);
             Ui.switchToView(view, delegate, Ui.SLIDE_IMMEDIATE);
-        } else {
-            // show error - try again
+        } else if (status == 456) {
             // generate new watch id
             var app = App.getApp();
             var newWatchId = generateWatchId();
             app.setProperty("watch_id", newWatchId);
             mView.showNotRegistered(newWatchId);
+        } else {
+            // other error
+            Ui.switchToView(new ConnectionErrorView(data), new ConnectionErrorDelegate(), Ui.SLIDE_IMMEDIATE);
         }
     }
 
     function onMenu() {
-        Sys.println("ON MENU");
         //Ui.pushView(new Rez.Menus.MainMenu(), new GarminelloMenuDelegate(), Ui.SLIDE_UP);
         return true;
     }
