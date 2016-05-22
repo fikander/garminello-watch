@@ -5,10 +5,10 @@ class ListView extends Ui.View {
 
     hidden var mItems;
     hidden var mErr;
-    hidden var startX, startY, offsetX, offsetY, listHeight;
+    hidden var startX, startY, offsetX, offsetY, listHeight, listWidth;
     hidden var pageSize, lastPage, currentPage;
 
-    hidden var COLORS = [Graphics.COLOR_DK_BLUE, Graphics.COLOR_BLUE, Graphics.COLOR_RED];
+    hidden var COLORS = [Graphics.COLOR_DK_BLUE, Graphics.COLOR_DK_GREEN, Graphics.COLOR_DK_RED];
 
     function initialize() {
         View.initialize();
@@ -17,11 +17,32 @@ class ListView extends Ui.View {
         startX = 4;
         startY = 30;
         offsetX = 0;
-        offsetY = 50;
-        listHeight = 174;
-        pageSize = 3;
+        offsetY = 50; // height of single module
+        listHeight = 174; // height of the whole list
+        listWidth = 140;
+        pageSize = 3; // part of one more element is drawn to suggest you can scroll down
         currentPage = 0;
         lastPage = 0;
+
+        // from https://forums.garmin.com/showthread.php?351190-How-to-format-and-display-long-text&p=850225#post850225
+        //var oneCharWidth=dc.getTextWidthInPixels("AbCdEfGhIj",Gfx.FONT_SMALL)/10;
+        //var charPerLine=width/oneCharWidth;
+    }
+
+    function formatText(dc, text, width) {
+        //var chars = "EeeTtaAooiNshRdlcum   ";
+        var chars = "AbCdEfGhIj";
+        var oneCharWidth = dc.getTextWidthInPixels(chars, Graphics.FONT_SMALL) / chars.length();
+        //Sys.println("ListView::formatText: char width: " + oneCharWidth);
+        var charPerLine = listWidth / oneCharWidth;
+        if (text.length() > charPerLine) {
+            var result = text.substring(0, charPerLine);
+            result += "\n";
+            result += text.substring(charPerLine, text.length());
+            return [result, 0];
+        } else {
+            return [text, 1];
+        }
     }
 
     //! Update the view
@@ -36,7 +57,7 @@ class ListView extends Ui.View {
             if (endItem >= mItems.size()) {
                 endItem = mItems.size()-1;
             }
-            Sys.println("page: " + currentPage + "/" + lastPage + " first item: " + startItem + " last item: " + endItem);
+            //Sys.println("page: " + currentPage + "/" + lastPage + " first item: " + startItem + " last item: " + endItem);
             //draw backgrounds
             dc.setColor(Graphics.COLOR_DK_BLUE, Graphics.COLOR_RED);
             var i = 0;
@@ -50,10 +71,12 @@ class ListView extends Ui.View {
             dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
             i = 0;
             for (var item = startItem; item <= endItem; item++) {
-                var midline = startY + offsetY * (i + 0.5);
+                var formatted = formatText(dc, mItems[item]["name"], listWidth);
+                var offset = startY + offsetY * (i + 0.25 * formatted[1]) + 3;
+                //Sys.println(formatted.toString() + " " + offset);
                 dc.drawText(
-                    startX + offsetX * i, midline, Graphics.FONT_XTINY,
-                    mItems[item]["name"], Graphics.TEXT_JUSTIFY_LEFT | Graphics.TEXT_JUSTIFY_VCENTER
+                    startX + offsetX * i, offset, Graphics.FONT_XTINY,
+                    formatted[0], Graphics.TEXT_JUSTIFY_LEFT
                 );
                 i++;
             }
@@ -64,7 +87,7 @@ class ListView extends Ui.View {
                 dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
                 var progressSize = listHeight / (lastPage + 1);
                 var progressStart = listHeight * currentPage / (lastPage + 1);
-                Sys.println("size: " + progressSize + " start: " + progressStart);
+                //Sys.println("size: " + progressSize + " start: " + progressStart);
                 dc.fillRectangle(144, startY + progressStart, 8, progressSize);
             }
         } else {
