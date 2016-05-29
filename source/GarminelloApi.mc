@@ -86,24 +86,19 @@ class GarminelloApi {
     }
 
     function get_or_post(http_method, url, parameters, callback) {
-//        var watch_id = app.getProperty("watch_id");
-//        if (watch_id != null) {
-            var call = new ApiCall(callback);
-            parameters["v"] = VERSION;
-            Comm.makeJsonRequest(
-                api_url + url,
-                parameters,
-                {
-                    :headers => {
-                        "Content-Type" => Comm.REQUEST_CONTENT_TYPE_JSON
-                    },
-                    :method => http_method
+        var call = new ApiCall(callback);
+        parameters["v"] = VERSION;
+        Comm.makeJsonRequest(
+            api_url + url,
+            parameters,
+            {
+                :headers => {
+                    "Content-Type" => Comm.REQUEST_CONTENT_TYPE_JSON
                 },
-                call.method(:onReceive)
-            );
-//        } else {
-//            callback.invoke(456, Ui.loadResource(Rez.Strings.register_watch_error));
-//        }
+                :method => http_method
+            },
+            call.method(:onReceive)
+        );
         return true;
     }
 
