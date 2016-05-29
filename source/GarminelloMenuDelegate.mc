@@ -13,6 +13,7 @@ class UnregisterConfirmationDelegate extends Ui.ConfirmationDelegate {
         if (response == Ui.CONFIRM_YES) {
             var app = App.getApp();
             app.setProperty("watch_id", null);
+            app.setProperty("activation_code", null);
         }
     }
 }

@@ -23,6 +23,8 @@ class GarminelloApp extends App.AppBase {
     //! Return the initial view of your application here
     function getInitialView() {
         gApi = new GarminelloApi("https://garminello.herokuapp.com");
+        //gApi = new GarminelloApi("https://5d215908.ngrok.io");
+
         var app = App.getApp();
         var lastBoard = app.getProperty("board");
         var lastItems = app.getProperty("items");

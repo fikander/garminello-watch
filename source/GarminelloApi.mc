@@ -38,61 +38,80 @@ class GarminelloApi {
         api_url = url;
     }
 
-    function getConfig(callback) {
+    function registerWatch(callback) {
         var p = Profile.getProfile();
-        return get(
-            "/api/config",
+        return post(
+            "/api/watch/register",
             {
-                "watch" => app.getProperty("watch_id"),
-                "activityClass" => p.activityClass,
-                "birthYear" => p.birthYear,
-                "gender" => p.gender,
-                "height" => p.height,
-                "restingHeartRate" => p.restingHeartRate,
-                "runningStepLength" => p.runningStepLength,
-                "walkingStepLength" => p.walkingStepLength,
-                "weight" => p.weight
-            }, callback
+                "activation_code" => app.getProperty("activation_code"),
+                "type" => "vivoactive_hr",
+                "profile" => {
+                    "activityClass" => p.activityClass,
+                    "birthYear" => p.birthYear,
+                    "gender" => p.gender,
+                    "height" => p.height,
+                    "restingHeartRate" => p.restingHeartRate,
+                    "runningStepLength" => p.runningStepLength,
+                    "walkingStepLength" => p.walkingStepLength,
+                    "weight" => p.weight
+                }
+             }, callback
+        );
+    }
+
+    function getConfig(callback) {
+        return get(
+            "/api/watch/config/" + app.getProperty("watch_id"),
+            {},
+            callback
         );
     }
 
     // Get all boards
     function getBoards(callback) {
         return get(
-            "/api/boards",
-            {
-                "watch" => app.getProperty("watch_id")
-            }, callback
+            "/api/watch/boards/" + app.getProperty("watch_id"),
+            {},
+            callback
         );
     }
 
     // Get all lists of a baord
     function getBoard(board_id, callback) {
         return get(
-            "/api/board_lists",
-            {
-                "watch" => app.getProperty("watch_id"),
-                "board_id" => board_id
-            }, callback
+            "/api/watch/board_lists/" + app.getProperty("watch_id") + "/" + board_id,
+            {},
+            callback
         );
     }
 
-    function get(url, options, callback) {
-        var watch_id = app.getProperty("watch_id");
-        if (watch_id != null) {
+    function get_or_post(http_method, url, parameters, callback) {
+//        var watch_id = app.getProperty("watch_id");
+//        if (watch_id != null) {
             var call = new ApiCall(callback);
-            options["v"] = VERSION;
+            parameters["v"] = VERSION;
             Comm.makeJsonRequest(
                 api_url + url,
-                options,
+                parameters,
                 {
-                    "Content-Type" => Comm.REQUEST_CONTENT_TYPE_URL_ENCODED
+                    :headers => {
+                        "Content-Type" => Comm.REQUEST_CONTENT_TYPE_JSON
+                    },
+                    :method => http_method
                 },
                 call.method(:onReceive)
             );
-        } else {
-            callback.invoke(456, Ui.loadResource(Rez.Strings.register_watch_error));
-        }
+//        } else {
+//            callback.invoke(456, Ui.loadResource(Rez.Strings.register_watch_error));
+//        }
         return true;
+    }
+
+    function get(url, parameters, callback) {
+        return get_or_post(Comm.HTTP_REQUEST_METHOD_GET, url, parameters, callback);
+    }
+
+    function post(url, parameters, callback) {
+        return get_or_post(Comm.HTTP_REQUEST_METHOD_POST, url, parameters, callback);
     }
 }

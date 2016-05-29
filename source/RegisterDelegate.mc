@@ -6,8 +6,10 @@ using Toybox.Math as Math;
 class RegisterDelegate extends Ui.BehaviorDelegate {
 
     hidden var mView;
+    hidden var mApp;
 
     function initialize(view) {
+        mApp = App.getApp();
         BehaviorDelegate.initialize();
         mView = view;
         tryConfig();
@@ -25,13 +27,29 @@ class RegisterDelegate extends Ui.BehaviorDelegate {
             var delegate = new BoardSelectionViewDelegate(view);
             Ui.switchToView(view, delegate, Ui.SLIDE_IMMEDIATE);
         } else if (status == 456) {
-            // generate new watch id
-            var app = App.getApp();
-            var newWatchId = generateWatchId();
-            app.setProperty("watch_id", newWatchId);
-            mView.showNotRegistered(newWatchId);
+            // generate new activation_code
+            var newActivationCode = generateActivationCode(8);
+            mApp.setProperty("activation_code", newActivationCode);
+            mView.showNotRegistered(newActivationCode);
         } else {
             // other error
+            Ui.switchToView(new ConnectionErrorView(data), new ConnectionErrorDelegate(), Ui.SLIDE_IMMEDIATE);
+        }
+    }
+
+    function tryRegister() {
+        gApi.registerWatch(method(:onRegisterReceived));
+    }
+
+    function onRegisterReceived(status, data) {
+        Sys.println("RegisterDelegate:onRegisterReceived " + status.toString() + " " + data);
+        if (status == 200) {
+            if (data instanceof Dictionary and data["active"]) {
+                // registered, remember UUID and get proper config
+                mApp.setProperty("watch_id", data["uuid"]);
+                tryConfig();
+            }
+        } else {
             Ui.switchToView(new ConnectionErrorView(data), new ConnectionErrorDelegate(), Ui.SLIDE_IMMEDIATE);
         }
     }
@@ -42,18 +60,18 @@ class RegisterDelegate extends Ui.BehaviorDelegate {
     }
 
     function onTap(evt) {
-        tryConfig();
+        tryRegister();
         //var view = new BoardSelectionView();
         //var delegate = new BoardSelectionViewDelegate(view);
         //Ui.switchToView(view, delegate, Ui.SLIDE_IMMEDIATE);
         return true;
     }
 
-    function generateWatchId() {
+    function generateActivationCode(length) {
         var id = "";
         // no "O" as it could be confised with 0
         var s = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","P","Q","R","S","T","U","V","W","X","Y","Z","0","1","2","3","4","5","6","7","8","9"];
-        for (var i=0; i<8; i++) {
+        for (var i = 0; i < length; i++) {
             id += s[Math.rand() % s.size()];
         }
         return id;
