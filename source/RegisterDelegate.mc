@@ -69,8 +69,8 @@ class RegisterDelegate extends Ui.BehaviorDelegate {
 
     function generateActivationCode(length) {
         var id = "";
-        // no "O" as it could be confised with 0
-        var s = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","P","Q","R","S","T","U","V","W","X","Y","Z","0","1","2","3","4","5","6","7","8","9"];
+        // no "O" and "0" as they could be confused
+        var s = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","P","Q","R","S","T","U","V","W","X","Y","Z","1","2","3","4","5","6","7","8","9"];
         for (var i = 0; i < length; i++) {
             id += s[Math.rand() % s.size()];
         }

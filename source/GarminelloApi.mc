@@ -16,6 +16,7 @@ class ApiCall {
         // alternative status (straight from the garminello server) may be embedded in the return JSON dictionary
         if (data instanceof Dictionary and data["status"] != null) {
             status = data["status"];
+            data = data["error"];
         }
         if (status == 456) {
             data = Ui.loadResource(Rez.Strings.register_watch_error);

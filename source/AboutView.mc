@@ -22,8 +22,6 @@ class AboutViewDelegate extends Ui.BehaviorDelegate {
 
 class AboutView extends Ui.View {
 
-    hidden var watch_id;
-
     function initialize() {
         View.initialize();
     }
@@ -35,15 +33,11 @@ class AboutView extends Ui.View {
 
     //! Restore the state of the app and prepare the view to be shown
     function onShow() {
-        var app = App.getApp();
-        watch_id = app.getProperty("watch_id");
      }
 
     //! Update the view
     function onUpdate(dc) {
-        if (watch_id != null) {
-            findDrawableById("watch_id").setText(watch_id);
-        }
+        findDrawableById("version").setText(VERSION);
         View.onUpdate(dc);
     }
 
