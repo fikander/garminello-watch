@@ -19,5 +19,8 @@
     <string id="unregister_watch">Unregister watch</string>
     <string id="are_you_sure">Are you sure?</string>
     <string id="about">About</string>
-    <string id="menu_go_to_boards">Exit Board</string>
+    <string id="menu_go_to_boards">[Exit Board]</string>
+    <string id="menu_play_list">[Play List]</string>
+    
+    <string id="menu_title_lists">Lists</string>
 </strings>

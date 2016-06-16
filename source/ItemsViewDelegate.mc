@@ -28,13 +28,17 @@ class ItemsViewDelegate extends Ui.BehaviorDelegate {
             } else {
                 mView.nextList();
             }
-            return true;
-        }
-        var i = mView.getItemIndexFromCoordinates(evt.getCoordinates());
-        if (i != null) {
-            mModel.cardTapped(mView.getCurrentList(), i);
+        } else {
+            var i = mView.getItemIndexFromCoordinates(evt.getCoordinates());
+            if (i != null) {
+                mModel.cardTapped(mView.getCurrentList(), i);
+            }
         }
         return true;
+    }
+
+    function changeList(index) {
+        mView.onChangeList(index);
     }
 
     function onSwipe(evt)
@@ -75,7 +79,14 @@ class ItemsViewDelegate extends Ui.BehaviorDelegate {
     }
 
     function onMenu() {
-        Ui.pushView(new Rez.Menus.ItemsViewMenu(), new GarminelloMenuDelegate(self), Ui.SLIDE_UP);
+        var menu = new Rez.Menus.ItemsViewMenu();
+        //menu.setTitle(Rez.Strings.menu_title_lists);
+        // create menu containing names of all lists
+        var lists = mModel.getLists();
+        for (var i=0; i < lists.size(); i++) {
+            menu.addItem(lists[i]["name"], 10000 + i);
+        }
+        Ui.pushView(menu, new ItemsViewMenuDelegate(self), Ui.SLIDE_UP);
         return true;
     }
 

@@ -63,6 +63,10 @@ class ItemsModel {
         return mItems != null;
     }
 
+    function getLists() {
+        return mItems;
+    }
+
     function getListsCount() {
         return mItems != null ? mItems.size() : 0;
     }
