@@ -72,8 +72,7 @@ class ItemsViewDelegate extends Ui.BehaviorDelegate {
         var key = evt.getKey();
         if( key == KEY_ENTER )
         {
-            onMenu();
-            return true;
+            return onMenu();
         }
         return false;
     }
@@ -97,4 +96,9 @@ class ItemsViewDelegate extends Ui.BehaviorDelegate {
         Ui.switchToView(view, delegate, Ui.SLIDE_IMMEDIATE);
     }
 
+    function menuPlayList() {
+        var view = new PlaybackView(mModel, mView.getCurrentList());
+        var delegate = new PlaybackViewDelegate(view);
+        Ui.pushView(view, delegate, Ui.SLIDE_IMMEDIATE);
+    }
 }

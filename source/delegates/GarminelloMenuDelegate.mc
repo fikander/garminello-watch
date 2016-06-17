@@ -94,7 +94,8 @@ class ItemsViewMenuDelegate extends Ui.MenuInputDelegate {
             mOrigin.menuExitBoard();
             //Ui.pushView(new Ui.Confirmation(Ui.loadResource(Rez.Strings.are_you_sure)), new ExitBoardConfirmationDelegate(mOrigin), Ui.SLIDE_IMMEDIATE);
         } else if (item == :menu_play_list) {
-            Sys.println("TODO");
+            Ui.popView(Ui.SLIDE_DOWN);
+            mOrigin.menuPlayList();
         } else {
             var i = symbolToInt(item);
             mOrigin.changeList(i);
