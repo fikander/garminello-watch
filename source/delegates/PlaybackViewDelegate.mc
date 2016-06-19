@@ -46,8 +46,20 @@ class PlaybackViewDelegate extends Ui.BehaviorDelegate {
         return false;
     }
 
+    function onTap(evt) {
+        var coords = evt.getCoordinates();
+        if (coords[1] > 170) {
+            mView.next();
+        }
+        return true;
+    }
+
     function onMenu() {
-        //TODO: start/stop
+        if (mView.isRunning()) {
+            mView.pause();
+        } else {
+            mView.unpause();
+        }
         return true;
     }
 

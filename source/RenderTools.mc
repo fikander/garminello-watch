@@ -33,6 +33,17 @@ class RenderTools {
         }
     }
 
+    function formatMinSec(seconds) {
+        var result = "";
+        var min = seconds / 60;
+        var sec = seconds % 60;
+        if (min < 10) { result += "0"; }
+        result += min + ":";
+        if (sec < 10) { result += "0"; }
+        result += sec;
+        return result;
+    }
+
     function drawItem(dc, item, offsetY) {
         Sys.println("CardViewTools::drawItem");
         // hidden var COLORS = [Graphics.COLOR_DK_BLUE, Graphics.COLOR_DK_GREEN, Graphics.COLOR_DK_RED];
