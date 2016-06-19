@@ -134,7 +134,7 @@ class PlaybackView extends Ui.View {
         if (l != null) {
             findDrawableById("list_title").setText(l["name"]);
             if (mCurrentCard) {
-                var formatted = mTools.formatText(dc, mCurrentCard["name"], mTools.mListWidth, Gfx.FONT_SMALL);
+                var formatted = mTools.formatText(dc, mCurrentCard["name"], mTools.mListWidth, Gfx.FONT_XTINY);
                 findDrawableById("item_title").setText(formatted[0]);
                 findDrawableById("item_number").setText("" + (mCurrentCardId + 1) + "/" + mCards.size());
                 findDrawableById("time_left").setText(mTools.formatMinSec(mCurrentTime / 1000));

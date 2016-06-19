@@ -1,5 +1,6 @@
 using Toybox.WatchUi as Ui;
 using Toybox.System as Sys;
+using Toybox.Graphics as Gfx;
 
 class ListView extends Ui.View {
 
@@ -8,7 +9,9 @@ class ListView extends Ui.View {
     hidden var startX, startY, offsetX, offsetY, listHeight, listWidth;
     hidden var pageSize, lastPage, currentPage;
 
-    hidden var COLORS = [Graphics.COLOR_DK_BLUE, Graphics.COLOR_DK_GREEN, Graphics.COLOR_DK_RED];
+    hidden var mTools;
+
+    hidden var COLORS = [Gfx.COLOR_DK_BLUE, Gfx.COLOR_DK_GREEN, Gfx.COLOR_DK_RED];
 
     function initialize() {
         View.initialize();
@@ -24,25 +27,11 @@ class ListView extends Ui.View {
         currentPage = 0;
         lastPage = 0;
 
+        mTools = new RenderTools("vivoactive_hr");
+
         // from https://forums.garmin.com/showthread.php?351190-How-to-format-and-display-long-text&p=850225#post850225
         //var oneCharWidth=dc.getTextWidthInPixels("AbCdEfGhIj",Gfx.FONT_SMALL)/10;
         //var charPerLine=width/oneCharWidth;
-    }
-
-    function formatText(dc, text, width) {
-        //var chars = "EeeTtaAooiNshRdlcum   ";
-        var chars = "AbCdEfGhIj";
-        var oneCharWidth = dc.getTextWidthInPixels(chars, Graphics.FONT_SMALL) / chars.length();
-        //Sys.println("ListView::formatText: char width: " + oneCharWidth);
-        var charPerLine = listWidth / oneCharWidth;
-        if (text.length() > charPerLine) {
-            var result = text.substring(0, charPerLine);
-            result += "\n";
-            result += text.substring(charPerLine, text.length());
-            return [result, 0];
-        } else {
-            return [text, 1];
-        }
     }
 
     //! Update the view
@@ -62,28 +51,28 @@ class ListView extends Ui.View {
             var i = 0;
             for (var item = startItem; item <= endItem; item++) {
                 var style = mItems[item]["color"] ? mItems[item]["color"] : 0;
-                dc.setColor(COLORS[style % COLORS.size()], Graphics.COLOR_TRANSPARENT);
+                dc.setColor(COLORS[style % COLORS.size()], Gfx.COLOR_TRANSPARENT);
                 dc.fillRoundedRectangle(0, startY + offsetY * i, 144, offsetY - 2, 5);
                 i++;
             }
             //draw text fields
-            dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
+            dc.setColor(Gfx.COLOR_WHITE, Gfx.COLOR_TRANSPARENT);
             i = 0;
             for (var item = startItem; item <= endItem; item++) {
-                var formatted = formatText(dc, mItems[item]["name"], listWidth);
+                var formatted = mTools.formatText(dc, mItems[item]["name"], listWidth, Gfx.FONT_XTINY);
                 var offset = startY + offsetY * (i + 0.25 * formatted[1]) + 3;
                 //Sys.println(formatted.toString() + " " + offset);
                 dc.drawText(
-                    startX + offsetX * i, offset, Graphics.FONT_XTINY,
-                    formatted[0], Graphics.TEXT_JUSTIFY_LEFT
+                    startX + offsetX * i, offset, Gfx.FONT_XTINY,
+                    formatted[0], Gfx.TEXT_JUSTIFY_LEFT
                 );
                 i++;
             }
             // draw progress on the right - show which page is currently shown
             if (lastPage > 0) {
-                dc.setColor(Graphics.COLOR_BLACK, Graphics.COLOR_TRANSPARENT);
+                dc.setColor(Gfx.COLOR_BLACK, Gfx.COLOR_TRANSPARENT);
                 dc.fillRectangle(144, startY, 8, listHeight);
-                dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
+                dc.setColor(Gfx.COLOR_LT_GRAY, Gfx.COLOR_TRANSPARENT);
                 var progressSize = listHeight / (lastPage + 1);
                 var progressStart = listHeight * currentPage / (lastPage + 1);
                 //Sys.println("size: " + progressSize + " start: " + progressStart);
@@ -92,15 +81,15 @@ class ListView extends Ui.View {
         } else {
             var message;
             if (mErr) {
-                dc.setColor(Graphics.COLOR_RED, Graphics.COLOR_TRANSPARENT);
+                dc.setColor(Gfx.COLOR_RED, Gfx.COLOR_TRANSPARENT);
                 message = Ui.loadResource(Rez.Strings.load_failed) + mErr;
             } else {
-                dc.setColor(Graphics.COLOR_LT_GRAY, Graphics.COLOR_TRANSPARENT);
+                dc.setColor(Gfx.COLOR_LT_GRAY, Gfx.COLOR_TRANSPARENT);
                 message = Ui.loadResource(Rez.Strings.loading);
             }
             dc.drawText(
-                dc.getWidth()/2, dc.getHeight()/2, Graphics.FONT_XTINY,
-                message, Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER
+                dc.getWidth()/2, dc.getHeight()/2, Gfx.FONT_XTINY,
+                message, Gfx.TEXT_JUSTIFY_CENTER | Gfx.TEXT_JUSTIFY_VCENTER
             );
         }
     }

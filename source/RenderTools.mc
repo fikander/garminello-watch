@@ -43,20 +43,4 @@ class RenderTools {
         result += sec;
         return result;
     }
-
-    function drawItem(dc, item, offsetY) {
-        Sys.println("CardViewTools::drawItem");
-        // hidden var COLORS = [Graphics.COLOR_DK_BLUE, Graphics.COLOR_DK_GREEN, Graphics.COLOR_DK_RED];
-        var style = item["color"] ? item["color"] : 0;
-        dc.setColor(COLORS[style % COLORS.size()], Gfx.COLOR_TRANSPARENT);
-        dc.fillRoundedRectangle(0, offsetY, 144, mItemHeight, 5);
-
-        var formatted = formatText(dc, item["name"], mListWidth, Gfx.FONT_SMALL);
-        var offset = offsetY + 0.25 * formatted[1] + 3;
-        //Sys.println(formatted.toString() + " " + offset);
-        dc.drawText(
-            4, offset, Graphics.FONT_XTINY,
-            formatted[0], Graphics.TEXT_JUSTIFY_LEFT
-        );
-    }
 }
