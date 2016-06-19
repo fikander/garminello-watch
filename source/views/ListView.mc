@@ -59,7 +59,6 @@ class ListView extends Ui.View {
             }
             //Sys.println("page: " + currentPage + "/" + lastPage + " first item: " + startItem + " last item: " + endItem);
             //draw backgrounds
-            dc.setColor(Graphics.COLOR_DK_BLUE, Graphics.COLOR_RED);
             var i = 0;
             for (var item = startItem; item <= endItem; item++) {
                 var style = mItems[item]["color"] ? mItems[item]["color"] : 0;

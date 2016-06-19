@@ -1,4 +1,11 @@
 <drawables>
     <bitmap id="LauncherIcon" filename="launcher_icon.png" />
     <bitmap id="loading" filename="launcher_icon.png"/>
+    <drawable-list id="list_count_background" x="0" y="4" height="25" width="25" background="Gfx.COLOR_BLACK">
+    </drawable-list>
+    <drawable-list id="play_view_scaffolding" x="0" y="0" background="Gfx.COLOR_BLACK">
+    	<shape type="rectangle" x="0" y="29" width="148" height="2" color="Gfx.COLOR_DK_BLUE"/>
+    	<shape type="rectangle" x="0" y="170" width="148" height="2" color="Gfx.COLOR_DK_BLUE"/>
+    	<shape type="polygon" x="0" y="171" points="[[0,176], [16,187], [0,199]]" color="Gfx.COLOR_DK_BLUE"/>
+    </drawable-list>
 </drawables>

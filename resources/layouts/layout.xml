@@ -25,16 +25,21 @@
 	</layout>
 
 	<layout id="ItemsLayout">
-	    <label id="list_title" x="center" y="5" font="Gfx.FONT_SMALL" text="@Strings.view_list" color="Gfx.COLOR_YELLOW" justification="Gfx.TEXT_JUSTIFY_CENTER" />
+	    <label id="list_title" x="25" y="5" font="Gfx.FONT_SMALL" text="@Strings.view_list" color="Gfx.COLOR_WHITE" justification="Gfx.TEXT_JUSTIFY_LEFT" />
+	    <drawable id="list_count_background"/>
 	    <label id="list_number" x="0" y="5" font="Gfx.FONT_SMALL" text="@Strings.empty" color="Gfx.COLOR_YELLOW" justification="Gfx.TEXT_JUSTIFY_LEFT" />
 	</layout>
 
 	<layout id="PlaybackLayout">
-	    <label id="list_title" x="center" y="5" font="Gfx.FONT_SMALL" text="@Strings.view_list" color="Gfx.COLOR_YELLOW" justification="Gfx.TEXT_JUSTIFY_CENTER" />
-	    <label id="item_title" x="center" y="25" font="Gfx.FONT_SMALL" text="@Strings.empty" color="Gfx.COLOR_WHITE" justification="Gfx.TEXT_JUSTIFY_CENTER" />
-	    <label id="item_number" x="center" y="45" font="Gfx.FONT_SMALL" text="@Strings.empty" color="Gfx.COLOR_WHITE" justification="Gfx.TEXT_JUSTIFY_CENTER" />
-	    <label id="time" x="center" y="65" font="Gfx.FONT_SMALL" text="@Strings.empty" color="Gfx.COLOR_WHITE" justification="Gfx.TEXT_JUSTIFY_CENTER" />
-	    <label id="next_item_title" x="center" y="85" font="Gfx.FONT_SMALL" text="@Strings.empty" color="Gfx.COLOR_WHITE" justification="Gfx.TEXT_JUSTIFY_CENTER" />
+		<drawable id="play_view_scaffolding"/>
+	    <label id="list_title" x="0" y="5" font="Gfx.FONT_SMALL" text="@Strings.view_list" color="Gfx.COLOR_WHITE" justification="Gfx.TEXT_JUSTIFY_LEFT" />
+
+	    <label id="item_number" x="0" y="29" font="Gfx.FONT_SMALL" text="@Strings.empty" color="Gfx.COLOR_YELLOW" justification="Gfx.TEXT_JUSTIFY_LEFT" />
+	    <label id="item_title" x="0" y="50" font="Gfx.FONT_SMALL" text="@Strings.empty" color="Gfx.COLOR_WHITE" justification="Gfx.TEXT_JUSTIFY_LEFT" />
+
+	    <label id="time_left" x="center" y="95" font="Gfx.FONT_NUMBER_HOT" text="00:00" color="Gfx.COLOR_WHITE" justification="Gfx.TEXT_JUSTIFY_CENTER" />
+	    <label id="time_left_total" x="center" y="145" font="Gfx.FONT_SMALL" text="(total: 00:00)" color="Gfx.COLOR_WHITE" justification="Gfx.TEXT_JUSTIFY_CENTER" />
+	    <label id="next_item_title" x="18" y="175" font="Gfx.FONT_SMALL" text="@Strings.empty" color="Gfx.COLOR_WHITE" justification="Gfx.TEXT_JUSTIFY_LEFT" />
 	</layout>
 	
 	<layout id="ConnectionErrorLayout">
