@@ -26,7 +26,7 @@ class PlaybackView extends Ui.View {
 
     hidden var mLayoutDirty = false;
 
-    hidden var DEFAULT_TIME = 5;
+    hidden var DEFAULT_TIME = 60;
 
     // model - board data
     // listId - list to play back
