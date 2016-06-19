@@ -1,7 +1,7 @@
 using Toybox.System as Sys;
 using Toybox.Graphics as Gfx;
 
-class CardViewTools {
+class RenderTools {
 
     var mItemHeight = 150;
     var mListWidth = 140;

@@ -1,6 +1,7 @@
 using Toybox.WatchUi as Ui;
 using Toybox.System as Sys;
 using Toybox.Graphics as Gfx;
+using Toybox.Timer as Timer;
 
 class PlaybackView extends Ui.View {
 
@@ -9,6 +10,7 @@ class PlaybackView extends Ui.View {
     hidden var mCurrentCard;
 
     hidden var mTools;
+    hidden var mTimer;
 
     hidden var mItemHeight = 50;
     hidden var mListWidth = 140;
@@ -21,11 +23,21 @@ class PlaybackView extends Ui.View {
         mListId = listId;
         mCurrentCard = 0;
         mTools = new RenderTools("vivoactive_hr");
+        mTimer = new Timer.Timer();
     }
 
     //! Load your resources here
     function onLayout(dc) {
         setLayout(Rez.Layouts.PlaybackLayout(dc));
+    }
+
+    function onShow() {
+        mTimer.start(method(:tick), 500, true);
+    }
+
+    function tick() {
+        Sys.println("tick");
+        Ui.requestUpdate();
     }
 
     //! Update the view
@@ -39,9 +51,7 @@ class PlaybackView extends Ui.View {
             var current;
             if (cards.size() > mCurrentCard) {
                 current = cards[mCurrentCard];
-                Sys.println("PlaybackView::onUpdate::before format");
                 var formatted = mTools.formatText(dc, current["name"], mTools.mListWidth, Gfx.FONT_SMALL);
-                Sys.println("PlaybackView::onUpdate::after format: " + formatted);
                 findDrawableById("item_title").setText(formatted[0]);
                 findDrawableById("item_number").setText("" + (mCurrentCard + 1) + "/" + cards.size());
             }
@@ -52,5 +62,9 @@ class PlaybackView extends Ui.View {
             }
         }
         View.onUpdate(dc);
+    }
+
+    function onHide() {
+        mTimer.stop();
     }
 }
