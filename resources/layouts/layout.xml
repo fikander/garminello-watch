@@ -16,7 +16,7 @@
 	<layout id="AboutLayout">
 	    <label x="center" y="10" font="Gfx.FONT_LARGE" text="Garminello" color="Gfx.COLOR_YELLOW" justification="Gfx.TEXT_JUSTIFY_CENTER" />
 	    <label x="center" y="50" font="Gfx.FONT_SMALL" text="Trello for Garmin\nwatches" color="Gfx.COLOR_WHITE" justification="Gfx.TEXT_JUSTIFY_CENTER" />
-	    <label x="center" y="100" font="Gfx.FONT_SMALL" text="garminello.com" color="Gfx.COLOR_WHITE" justification="Gfx.TEXT_JUSTIFY_CENTER" />
+	    <label x="center" y="100" font="Gfx.FONT_TINY" text="garminello.herokuapp.com" color="Gfx.COLOR_WHITE" justification="Gfx.TEXT_JUSTIFY_CENTER" />
 	    <label id="version" x="center" y="160" font="Gfx.FONT_SMALL" text="@Strings.empty" color="Gfx.COLOR_LT_GRAY" justification="Gfx.TEXT_JUSTIFY_CENTER" />
 	</layout>
 

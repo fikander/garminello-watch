@@ -2,7 +2,7 @@ using Toybox.Application as App;
 using Toybox.WatchUi as Ui;
 using Toybox.System as Sys;
 
-var VERSION = "1.0";
+var VERSION = "0.9";
 
 var gApi = null;
 

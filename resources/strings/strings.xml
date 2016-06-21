@@ -3,7 +3,7 @@
 
     <string id="AppName">Garminello</string>
     
-    <string id="register">Register watch at\ngarminello.com/reg\nwith code</string>
+    <string id="register">Register watch at\ngarminello.herokuapp\n.com with code:</string>
     <string id="register_tap">Then tap the screen</string>
 	<string id="register_watch_error">Register watch</string>
 	<string id="register_watch_try_again">Try again</string>
