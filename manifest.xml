@@ -5,9 +5,6 @@
             <iq:product id="square_watch"/>
             <iq:product id="tall_watch"/>
             <iq:product id="round_watch"/>
-            <iq:product id="vivoactive"/>
-            <iq:product id="fenix3"/>
-            <iq:product id="fenix3_hr"/>
             <iq:product id="vivoactive_hr"/>
         </iq:products>
 
