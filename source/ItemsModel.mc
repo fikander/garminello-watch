@@ -1,10 +1,9 @@
-using Toybox.Application as App;
+using Toybox.Application.Storage as Storage;
 using Toybox.WatchUi as Ui;
 using Toybox.System as Sys;
 
 class ItemsModel {
 
-    var mApp;
     var mBoard; // board data
     var mItems; // array of lists with arrays of cards
 
@@ -13,7 +12,6 @@ class ItemsModel {
     var mUpdateCallback;
 
     function initialize(board, items) {
-        mApp = App.getApp();
         mBoard = board;
         mItems = items;
 
@@ -50,9 +48,9 @@ class ItemsModel {
 
     // called when view visualising this model is being hidden
     function onModified() {
-        // save as property for the next run
-        mApp.setProperty("board", mBoard);
-        mApp.setProperty("items", mItems);
+        // save for the next run
+        Storage.setValue("board", mBoard);
+        Storage.setValue("items", mItems);
     }
 
     function getError() {

@@ -1,4 +1,4 @@
-using Toybox.Application as App;
+using Toybox.Application.Storage as Storage;
 using Toybox.Communications as Comm;
 using Toybox.WatchUi as Ui;
 using Toybox.UserProfile as Profile;
@@ -32,20 +32,22 @@ class ApiCall {
 class GarminelloApi {
 
     hidden var api_url;
-    hidden var app;
 
     function initialize(url) {
-        app = App.getApp();
         api_url = url;
     }
 
     function registerWatch(callback) {
         var p = Profile.getProfile();
+        var settings = Sys.getDeviceSettings();
         return post(
             "/api/watch/register",
             {
-                "activation_code" => app.getProperty("activation_code"),
-                "type" => "vivoactive_hr",
+                "activation_code" => Storage.getValue("activation_code"),
+                "type" => settings.partNumber,
+                "screen_width" => settings.screenWidth,
+                "screen_height" => settings.screenHeight,
+                "screen_shape" => settings.screenShape,
                 "profile" => {
                     "activityClass" => p.activityClass,
                     "birthYear" => p.birthYear,
@@ -62,7 +64,7 @@ class GarminelloApi {
 
     function getConfig(callback) {
         return get(
-            "/api/watch/config/" + app.getProperty("watch_id"),
+            "/api/watch/config/" + Storage.getValue("watch_id"),
             {},
             callback
         );
@@ -71,7 +73,7 @@ class GarminelloApi {
     // Get all boards
     function getBoards(callback) {
         return get(
-            "/api/watch/boards/" + app.getProperty("watch_id"),
+            "/api/watch/boards/" + Storage.getValue("watch_id"),
             {},
             callback
         );
@@ -80,7 +82,7 @@ class GarminelloApi {
     // Get all lists of a baord
     function getBoard(board_id, callback) {
         return get(
-            "/api/watch/board_lists/" + app.getProperty("watch_id") + "/" + board_id,
+            "/api/watch/board_lists/" + Storage.getValue("watch_id") + "/" + board_id,
             {},
             callback
         );

@@ -9,7 +9,9 @@ class BoardSelectionView extends ListView {
 
     //! Load your resources here
     function onLayout(dc) {
+        ListView.onLayout(dc);
         setLayout(Rez.Layouts.BoardSelectionLayout(dc));
+        findDrawableById("select_board_title").setLocation(dc.getWidth() / 2, RenderTools.scaleY(dc, 5));
     }
 
     //! Called when this View is brought to the foreground. Restore

@@ -1,6 +1,6 @@
 using Toybox.WatchUi as Ui;
 using Toybox.System as Sys;
-using Toybox.Application as App;
+using Toybox.Application.Storage as Storage;
 
 class BoardSelectionViewDelegate extends Ui.BehaviorDelegate {
 
@@ -16,9 +16,8 @@ class BoardSelectionViewDelegate extends Ui.BehaviorDelegate {
 
         // delete cached list
         Sys.println("clearing cache");
-        var app = App.getApp();
-        app.setProperty("board", null);
-        app.setProperty("items", null);
+        Storage.deleteValue("board");
+        Storage.deleteValue("items");
 
         // fetch boards for the user
         gApi.getBoards(method(:onGetBoards));

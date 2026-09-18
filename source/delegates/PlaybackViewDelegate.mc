@@ -48,7 +48,8 @@ class PlaybackViewDelegate extends Ui.BehaviorDelegate {
 
     function onTap(evt) {
         var coords = evt.getCoordinates();
-        if (coords[1] > 170) {
+        var screenHeight = Sys.getDeviceSettings().screenHeight;
+        if (coords[1] > RenderTools.scaleToHeight(screenHeight, 170)) {
             mView.next();
         }
         return true;

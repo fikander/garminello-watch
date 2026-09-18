@@ -1,4 +1,5 @@
 using Toybox.Application as App;
+using Toybox.Application.Storage as Storage;
 using Toybox.WatchUi as Ui;
 using Toybox.System as Sys;
 
@@ -25,9 +26,8 @@ class GarminelloApp extends App.AppBase {
         gApi = new GarminelloApi("https://garminello.herokuapp.com");
         //gApi = new GarminelloApi("https://5d215908.ngrok.io");
 
-        var app = App.getApp();
-        var lastBoard = app.getProperty("board");
-        var lastItems = app.getProperty("items");
+        var lastBoard = Storage.getValue("board");
+        var lastItems = Storage.getValue("items");
         //Sys.println(lastBoard);
         if (lastBoard != null and lastItems != null) {
             // last board data available - show the last list

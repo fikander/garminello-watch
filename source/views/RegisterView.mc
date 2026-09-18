@@ -25,6 +25,11 @@ class RegisterView extends Ui.View {
     function onLayout(dc) {
         Sys.println("ON LAYOUT");
         setLayout(Rez.Layouts.RegisterLayout(dc));
+        var centerX = dc.getWidth() / 2;
+        findDrawableById("register_title").setLocation(centerX, RenderTools.scaleY(dc, 5));
+        findDrawableById("watch_id").setLocation(centerX, RenderTools.scaleY(dc, 90));
+        findDrawableById("register_tap").setLocation(centerX, RenderTools.scaleY(dc, 130));
+        findDrawableById("error_msg").setLocation(centerX, RenderTools.scaleY(dc, 160));
     }
 
     //! Called when this View is brought to the foreground. Restore

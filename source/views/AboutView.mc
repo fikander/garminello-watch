@@ -29,6 +29,11 @@ class AboutView extends Ui.View {
     //! Load your resources here
     function onLayout(dc) {
         setLayout(Rez.Layouts.AboutLayout(dc));
+        var centerX = dc.getWidth() / 2;
+        findDrawableById("about_title").setLocation(centerX, RenderTools.scaleY(dc, 10));
+        findDrawableById("about_subtitle").setLocation(centerX, RenderTools.scaleY(dc, 50));
+        findDrawableById("about_url").setLocation(centerX, RenderTools.scaleY(dc, 100));
+        findDrawableById("version").setLocation(centerX, RenderTools.scaleY(dc, 160));
     }
 
     //! Restore the state of the app and prepare the view to be shown

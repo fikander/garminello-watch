@@ -22,8 +22,9 @@ class ItemsViewDelegate extends Ui.BehaviorDelegate {
 
     function onTap(evt) {
         var coords = evt.getCoordinates();
-        if (coords[1] < 32) {
-            if (coords[0] < 71) {
+        var settings = Sys.getDeviceSettings();
+        if (coords[1] < RenderTools.scaleToHeight(settings.screenHeight, 32)) {
+            if (coords[0] < settings.screenWidth / 2) {
                 mView.prevList();
             } else {
                 mView.nextList();

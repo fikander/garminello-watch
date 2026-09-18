@@ -21,9 +21,6 @@ class PlaybackView extends Ui.View {
     hidden var mTools;
     hidden var mTimer;
 
-    hidden var mItemHeight = 50;
-    hidden var mListWidth = 140;
-
     hidden var mLayoutDirty = false;
 
     hidden var DEFAULT_TIME = 60;
@@ -35,7 +32,6 @@ class PlaybackView extends Ui.View {
         mModel = model;
         mListId = listId;
         mCards = mModel.getCards(mListId);
-        mTools = new RenderTools("vivoactive_hr");
         mTimer = new Timer.Timer();
         if (mCards.size() > 0) {
             mTotalTimes = new [mCards.size()];
@@ -96,7 +92,23 @@ class PlaybackView extends Ui.View {
 
     //! Load your resources here
     function onLayout(dc) {
+        mTools = new RenderTools(dc);
         setLayout(Rez.Layouts.PlaybackLayout(dc));
+        positionLabels(dc);
+    }
+
+    //! Reposition the labels declared in the Layout XML resource so they
+    //! scale with the actual screen size instead of the hardcoded pixel
+    //! values they were authored with. Must be re-run every time
+    //! setLayout() is called, since that resets drawables to their
+    //! resource-declared (reference-device) positions.
+    function positionLabels(dc) {
+        findDrawableById("list_title").setLocation(0, RenderTools.scaleY(dc, 5));
+        findDrawableById("item_number").setLocation(0, RenderTools.scaleY(dc, 29));
+        findDrawableById("item_title").setLocation(0, RenderTools.scaleY(dc, 50));
+        findDrawableById("time_left").setLocation(dc.getWidth() / 2, RenderTools.scaleY(dc, 95));
+        findDrawableById("time_left_total").setLocation(dc.getWidth() / 2, RenderTools.scaleY(dc, 145));
+        findDrawableById("next_item_title").setLocation(RenderTools.scaleX(dc, 18), RenderTools.scaleY(dc, 175));
     }
 
     function onShow() {
@@ -119,8 +131,6 @@ class PlaybackView extends Ui.View {
     }
 
     //! Update the view
-    // screen resolution:
-    // vivoactive hr: 148x205
     function onUpdate(dc) {
         if (mLayoutDirty) {
             mLayoutDirty = false;
@@ -129,6 +139,7 @@ class PlaybackView extends Ui.View {
             } else {
                 setLayout(Rez.Layouts.PlaybackLayout(dc));
             }
+            positionLabels(dc);
         }
         var l = mModel.getList(mListId);
         if (l != null) {
@@ -147,6 +158,22 @@ class PlaybackView extends Ui.View {
             }
         }
         View.onUpdate(dc);
+        drawScaffolding(dc);
+    }
+
+    //! Divider lines and the "next" arrow marker, drawn procedurally
+    //! (scaled to the real screen size) instead of the old fixed-pixel
+    //! drawable-list resource.
+    function drawScaffolding(dc) {
+        var width = dc.getWidth();
+        dc.setColor(Gfx.COLOR_DK_BLUE, Gfx.COLOR_TRANSPARENT);
+        dc.fillRectangle(0, RenderTools.scaleY(dc, 29), width, RenderTools.scaleY(dc, 2));
+        dc.fillRectangle(0, RenderTools.scaleY(dc, 170), width, RenderTools.scaleY(dc, 2));
+        dc.fillPolygon([
+            [0, RenderTools.scaleY(dc, 176)],
+            [RenderTools.scaleX(dc, 16), RenderTools.scaleY(dc, 187)],
+            [0, RenderTools.scaleY(dc, 199)]
+        ]);
     }
 
     function onHide() {

@@ -1,15 +1,13 @@
 using Toybox.WatchUi as Ui;
 using Toybox.System as Sys;
-using Toybox.Application as App;
+using Toybox.Application.Storage as Storage;
 using Toybox.Math as Math;
 
 class RegisterDelegate extends Ui.BehaviorDelegate {
 
     hidden var mView;
-    hidden var mApp;
 
     function initialize(view) {
-        mApp = App.getApp();
         BehaviorDelegate.initialize();
         mView = view;
         tryConfig();
@@ -29,7 +27,7 @@ class RegisterDelegate extends Ui.BehaviorDelegate {
         } else if (status == 456) {
             // generate new activation_code
             var newActivationCode = generateActivationCode(8);
-            mApp.setProperty("activation_code", newActivationCode);
+            Storage.setValue("activation_code", newActivationCode);
             mView.showNotRegistered(newActivationCode);
         } else {
             // other error
@@ -46,7 +44,7 @@ class RegisterDelegate extends Ui.BehaviorDelegate {
         if (status == 200) {
             if (data instanceof Dictionary and data["active"]) {
                 // registered, remember UUID and get proper config
-                mApp.setProperty("watch_id", data["uuid"]);
+                Storage.setValue("watch_id", data["uuid"]);
                 tryConfig();
             }
         } else {

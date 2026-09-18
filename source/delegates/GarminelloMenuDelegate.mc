@@ -1,6 +1,6 @@
 using Toybox.WatchUi as Ui;
 using Toybox.System as Sys;
-using Toybox.Application as App;
+using Toybox.Application.Storage as Storage;
 
 
 class UnregisterConfirmationDelegate extends Ui.ConfirmationDelegate {
@@ -11,9 +11,8 @@ class UnregisterConfirmationDelegate extends Ui.ConfirmationDelegate {
 
     function onResponse(response) {
         if (response == Ui.CONFIRM_YES) {
-            var app = App.getApp();
-            app.setProperty("watch_id", null);
-            app.setProperty("activation_code", null);
+            Storage.deleteValue("watch_id");
+            Storage.deleteValue("activation_code");
         }
     }
 }
