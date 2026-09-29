@@ -21,7 +21,7 @@ class ConnectionErrorView extends Ui.View {
     }
 
     function onUpdate(dc) {
-        findDrawableById("error_msg").setText(mMessage.toString());
+        (findDrawableById("error_msg") as Ui.Text).setText(mMessage.toString());
         View.onUpdate(dc);
     }
 }

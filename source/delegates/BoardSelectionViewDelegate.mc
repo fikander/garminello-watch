@@ -34,7 +34,7 @@ class BoardSelectionViewDelegate extends Ui.BehaviorDelegate {
 
     function onTap(evt) {
         if (mCurrentBoards == null) {
-            return;
+            return false;
         }
         var i = mView.getItemIndexFromCoordinates(evt.getCoordinates());
         //Sys.println("clicked board: " + i);
@@ -45,7 +45,9 @@ class BoardSelectionViewDelegate extends Ui.BehaviorDelegate {
             var view = new ItemsView(model);
             var delegate = new ItemsViewDelegate(view, model);
             Ui.switchToView(view, delegate, Ui.SLIDE_IMMEDIATE);
+            return true;
         }
+        return false;
     }
 
     function onSwipe(evt)
@@ -91,7 +93,7 @@ class BoardSelectionViewDelegate extends Ui.BehaviorDelegate {
     }
 
     function menuAbout() {
-        Ui.pushView(new AboutView(), new AboutViewDelegate(self), Ui.SLIDE_UP);
+        Ui.pushView(new AboutView(), new AboutViewDelegate(), Ui.SLIDE_UP);
         return true;
     }
 }

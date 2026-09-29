@@ -10,9 +10,11 @@ class AboutViewDelegate extends Ui.BehaviorDelegate {
 
     function onKey(evt) {
         closeAbout();
+        return true;
     }
-    function onTap() {
+    function onTap(evt) {
         closeAbout();
+        return true;
     }
 
     function closeAbout() {
@@ -42,7 +44,7 @@ class AboutView extends Ui.View {
 
     //! Update the view
     function onUpdate(dc) {
-        findDrawableById("version").setText(VERSION);
+        (findDrawableById("version") as Ui.Text).setText(VERSION);
         View.onUpdate(dc);
     }
 

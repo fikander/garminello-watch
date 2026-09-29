@@ -3,6 +3,8 @@ using Toybox.Communications as Comm;
 using Toybox.WatchUi as Ui;
 using Toybox.UserProfile as Profile;
 using Toybox.System as Sys;
+using Toybox.PersistedContent as PersistedContent;
+using Toybox.Lang as Lang;
 
 class ApiCall {
     hidden var actualCallback;
@@ -11,7 +13,7 @@ class ApiCall {
         actualCallback = callback;
     }
 
-    function onReceive(status, data) {
+    function onReceive(status as Lang.Number, data as Null or Lang.Dictionary or Lang.String or PersistedContent.Iterator) as Void {
         Sys.println("ApiCall:onReceive: " + status + ": " + data);
         // alternative status (straight from the garminello server) may be embedded in the return JSON dictionary
         if (data instanceof Dictionary and data["status"] != null) {

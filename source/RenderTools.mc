@@ -8,8 +8,8 @@ using Toybox.Graphics as Gfx;
 // hardcoded to one device.
 class RenderTools {
 
-    const REFERENCE_WIDTH = 148.0;
-    const REFERENCE_HEIGHT = 205.0;
+    static const REFERENCE_WIDTH = 148.0;
+    static const REFERENCE_HEIGHT = 205.0;
 
     var mItemHeight;
     var mListWidth;

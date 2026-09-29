@@ -143,18 +143,18 @@ class PlaybackView extends Ui.View {
         }
         var l = mModel.getList(mListId);
         if (l != null) {
-            findDrawableById("list_title").setText(l["name"]);
+            (findDrawableById("list_title") as Ui.Text).setText(l["name"]);
             if (mCurrentCard) {
                 var formatted = mTools.formatText(dc, mCurrentCard["name"], mTools.mListWidth, Gfx.FONT_XTINY);
-                findDrawableById("item_title").setText(formatted[0]);
-                findDrawableById("item_number").setText("" + (mCurrentCardId + 1) + "/" + mCards.size());
-                findDrawableById("time_left").setText(mTools.formatMinSec(mCurrentTime / 1000));
-                findDrawableById("time_left_total").setText("total " + mTools.formatMinSec(mTotalTimes[mCurrentCardId] + mCurrentTime / 1000));
+                (findDrawableById("item_title") as Ui.Text).setText(formatted[0]);
+                (findDrawableById("item_number") as Ui.Text).setText("" + (mCurrentCardId + 1) + "/" + mCards.size());
+                (findDrawableById("time_left") as Ui.Text).setText(mTools.formatMinSec(mCurrentTime / 1000));
+                (findDrawableById("time_left_total") as Ui.Text).setText("total " + mTools.formatMinSec(mTotalTimes[mCurrentCardId] + mCurrentTime / 1000));
             }
             if (mNextCard) {
-                findDrawableById("next_item_title").setText(mNextCard["name"]);
+                (findDrawableById("next_item_title") as Ui.Text).setText(mNextCard["name"]);
             } else {
-                findDrawableById("next_item_title").setText("");
+                (findDrawableById("next_item_title") as Ui.Text).setText("");
             }
         }
         View.onUpdate(dc);

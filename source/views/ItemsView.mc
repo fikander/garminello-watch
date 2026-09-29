@@ -28,7 +28,7 @@ class ItemsView extends ListView {
     function onUpdate(dc) {
         var l = mModel.getList(mListId);
         if (l != null) {
-            findDrawableById("list_title").setText(l["name"]);
+            (findDrawableById("list_title") as Ui.Text).setText(l["name"]);
         }
         var c = mModel.getListsCount();
         if (c > 0) {
