@@ -1,6 +1,6 @@
 using Toybox.WatchUi as Ui;
 using Toybox.System as Sys;
-using Toybox.Application as App;
+using Toybox.Application.Storage as Storage;
 
 class BoardSelectionViewDelegate extends Ui.BehaviorDelegate {
 
@@ -16,9 +16,8 @@ class BoardSelectionViewDelegate extends Ui.BehaviorDelegate {
 
         // delete cached list
         Sys.println("clearing cache");
-        var app = App.getApp();
-        app.setProperty("board", null);
-        app.setProperty("items", null);
+        Storage.deleteValue("board");
+        Storage.deleteValue("items");
 
         // fetch boards for the user
         gApi.getBoards(method(:onGetBoards));
@@ -35,7 +34,7 @@ class BoardSelectionViewDelegate extends Ui.BehaviorDelegate {
 
     function onTap(evt) {
         if (mCurrentBoards == null) {
-            return;
+            return false;
         }
         var i = mView.getItemIndexFromCoordinates(evt.getCoordinates());
         //Sys.println("clicked board: " + i);
@@ -46,7 +45,9 @@ class BoardSelectionViewDelegate extends Ui.BehaviorDelegate {
             var view = new ItemsView(model);
             var delegate = new ItemsViewDelegate(view, model);
             Ui.switchToView(view, delegate, Ui.SLIDE_IMMEDIATE);
+            return true;
         }
+        return false;
     }
 
     function onSwipe(evt)
@@ -92,7 +93,7 @@ class BoardSelectionViewDelegate extends Ui.BehaviorDelegate {
     }
 
     function menuAbout() {
-        Ui.pushView(new AboutView(), new AboutViewDelegate(self), Ui.SLIDE_UP);
+        Ui.pushView(new AboutView(), new AboutViewDelegate(), Ui.SLIDE_UP);
         return true;
     }
 }

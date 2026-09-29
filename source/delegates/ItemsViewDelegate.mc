@@ -4,6 +4,18 @@ using Toybox.System as Sys;
 
 class ItemsViewDelegate extends Ui.BehaviorDelegate {
 
+    // Menu items need a compile-time Symbol identifier (WatchUi.Menu.addItem
+    // can't take a dynamically built one), so list entries are identified by
+    // their position in this fixed pool instead. Caps the number of lists
+    // that can be shown in the menu at once.
+    static const LIST_ITEM_IDS = [
+        :list_item_0, :list_item_1, :list_item_2, :list_item_3, :list_item_4,
+        :list_item_5, :list_item_6, :list_item_7, :list_item_8, :list_item_9,
+        :list_item_10, :list_item_11, :list_item_12, :list_item_13, :list_item_14,
+        :list_item_15, :list_item_16, :list_item_17, :list_item_18, :list_item_19,
+        :list_item_20, :list_item_21
+    ];
+
     hidden var mView;
     hidden var mModel;
 
@@ -22,8 +34,9 @@ class ItemsViewDelegate extends Ui.BehaviorDelegate {
 
     function onTap(evt) {
         var coords = evt.getCoordinates();
-        if (coords[1] < 32) {
-            if (coords[0] < 71) {
+        var settings = Sys.getDeviceSettings();
+        if (coords[1] < RenderTools.scaleToHeight(settings.screenHeight, 32)) {
+            if (coords[0] < settings.screenWidth / 2) {
                 mView.prevList();
             } else {
                 mView.nextList();
@@ -83,7 +96,7 @@ class ItemsViewDelegate extends Ui.BehaviorDelegate {
         // create menu containing names of all lists
         var lists = mModel.getLists();
         for (var i=0; i < lists.size(); i++) {
-            menu.addItem(lists[i]["name"], 10000 + i);
+            menu.addItem(lists[i]["name"], LIST_ITEM_IDS[i]);
         }
         Ui.pushView(menu, new ItemsViewMenuDelegate(self), Ui.SLIDE_UP);
         return true;
@@ -98,7 +111,7 @@ class ItemsViewDelegate extends Ui.BehaviorDelegate {
 
     function menuPlayList() {
         var view = new PlaybackView(mModel, mView.getCurrentList());
-        var delegate = new PlaybackViewDelegate(view);
+        var delegate = new PlaybackViewDelegate(view, mModel);
         Ui.pushView(view, delegate, Ui.SLIDE_IMMEDIATE);
     }
 }

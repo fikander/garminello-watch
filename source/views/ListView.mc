@@ -6,7 +6,7 @@ class ListView extends Ui.View {
 
     hidden var mItems;
     hidden var mErr;
-    hidden var startX, startY, offsetX, offsetY, listHeight, listWidth;
+    hidden var startX, startY, offsetX, offsetY, listHeight, listWidth, itemWidth, progressBarWidth;
     hidden var pageSize, lastPage, currentPage;
 
     hidden var mTools;
@@ -17,21 +17,26 @@ class ListView extends Ui.View {
         View.initialize();
         mItems = null;
         mErr = null;
-        startX = 4;
-        startY = 30;
-        offsetX = 0;
-        offsetY = 50; // height of single module
-        listHeight = 174; // height of the whole list
-        listWidth = 140;
         pageSize = 3; // part of one more element is drawn to suggest you can scroll down
         currentPage = 0;
         lastPage = 0;
 
-        mTools = new RenderTools("vivoactive_hr");
+        // real geometry is computed in onLayout(), once the actual screen
+        // size of the device is known
+    }
 
-        // from https://forums.garmin.com/showthread.php?351190-How-to-format-and-display-long-text&p=850225#post850225
-        //var oneCharWidth=dc.getTextWidthInPixels("AbCdEfGhIj",Gfx.FONT_SMALL)/10;
-        //var charPerLine=width/oneCharWidth;
+    //! Called by subclasses from their own onLayout() so list geometry
+    //! scales to the actual screen instead of being hardcoded to one device.
+    function onLayout(dc) {
+        mTools = new RenderTools(dc);
+        startX = RenderTools.scaleX(dc, 4);
+        startY = RenderTools.scaleY(dc, 30);
+        offsetX = 0;
+        offsetY = RenderTools.scaleY(dc, 50); // height of single module
+        listHeight = dc.getHeight() - startY - RenderTools.scaleY(dc, 5); // height of the whole list
+        listWidth = mTools.mListWidth;
+        progressBarWidth = RenderTools.scaleX(dc, 8);
+        itemWidth = dc.getWidth() - progressBarWidth;
     }
 
     //! Update the view
@@ -52,7 +57,7 @@ class ListView extends Ui.View {
             for (var item = startItem; item <= endItem; item++) {
                 var style = mItems[item]["color"] ? mItems[item]["color"] : 0;
                 dc.setColor(COLORS[style % COLORS.size()], Gfx.COLOR_TRANSPARENT);
-                dc.fillRoundedRectangle(0, startY + offsetY * i, 144, offsetY - 2, 5);
+                dc.fillRoundedRectangle(0, startY + offsetY * i, itemWidth, offsetY - 2, 5);
                 i++;
             }
             //draw text fields
@@ -60,7 +65,7 @@ class ListView extends Ui.View {
             i = 0;
             for (var item = startItem; item <= endItem; item++) {
                 var formatted = mTools.formatText(dc, mItems[item]["name"], listWidth, Gfx.FONT_XTINY);
-                var offset = startY + offsetY * (i + 0.25 * formatted[1]) + 3;
+                var offset = startY + offsetY * (i + 0.25 * formatted[1]) + RenderTools.scaleY(dc, 3);
                 //Sys.println(formatted.toString() + " " + offset);
                 dc.drawText(
                     startX + offsetX * i, offset, Gfx.FONT_XTINY,
@@ -71,12 +76,12 @@ class ListView extends Ui.View {
             // draw progress on the right - show which page is currently shown
             if (lastPage > 0) {
                 dc.setColor(Gfx.COLOR_BLACK, Gfx.COLOR_TRANSPARENT);
-                dc.fillRectangle(144, startY, 8, listHeight);
+                dc.fillRectangle(itemWidth, startY, progressBarWidth, listHeight);
                 dc.setColor(Gfx.COLOR_LT_GRAY, Gfx.COLOR_TRANSPARENT);
                 var progressSize = listHeight / (lastPage + 1);
                 var progressStart = listHeight * currentPage / (lastPage + 1);
                 //Sys.println("size: " + progressSize + " start: " + progressStart);
-                dc.fillRectangle(144, startY + progressStart, 8, progressSize);
+                dc.fillRectangle(itemWidth, startY + progressStart, progressBarWidth, progressSize);
             }
         } else {
             var message;

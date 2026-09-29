@@ -15,10 +15,13 @@ class ConnectionErrorView extends Ui.View {
     //! Load your resources here
     function onLayout(dc) {
         setLayout(Rez.Layouts.ConnectionErrorLayout(dc));
+        var centerX = dc.getWidth() / 2;
+        findDrawableById("connection_error_title").setLocation(centerX, RenderTools.scaleY(dc, 10));
+        findDrawableById("error_msg").setLocation(centerX, RenderTools.scaleY(dc, 100));
     }
 
     function onUpdate(dc) {
-        findDrawableById("error_msg").setText(mMessage.toString());
+        (findDrawableById("error_msg") as Ui.Text).setText(mMessage.toString());
         View.onUpdate(dc);
     }
 }

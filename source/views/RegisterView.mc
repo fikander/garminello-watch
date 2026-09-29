@@ -25,6 +25,11 @@ class RegisterView extends Ui.View {
     function onLayout(dc) {
         Sys.println("ON LAYOUT");
         setLayout(Rez.Layouts.RegisterLayout(dc));
+        var centerX = dc.getWidth() / 2;
+        findDrawableById("register_title").setLocation(centerX, RenderTools.scaleY(dc, 5));
+        findDrawableById("watch_id").setLocation(centerX, RenderTools.scaleY(dc, 90));
+        findDrawableById("register_tap").setLocation(centerX, RenderTools.scaleY(dc, 130));
+        findDrawableById("error_msg").setLocation(centerX, RenderTools.scaleY(dc, 160));
     }
 
     //! Called when this View is brought to the foreground. Restore
@@ -38,9 +43,9 @@ class RegisterView extends Ui.View {
     function onUpdate(dc) {
         Sys.println("ON UPDATE");
         if (mHideLoading) {
-            findDrawableById("error_msg").setText(mErrorMsg);
+            (findDrawableById("error_msg") as Ui.Text).setText(mErrorMsg);
             if (mWatchId != null) {
-                findDrawableById("watch_id").setText(mWatchId);
+                (findDrawableById("watch_id") as Ui.Text).setText(mWatchId);
             }
             // Call the parent onUpdate function to redraw the layout
             View.onUpdate(dc);
